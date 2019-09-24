@@ -1,4 +1,8 @@
 {
   "name": "pivot_table",
-  "version": "kibana"
+  "version": "kibana",
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "pivottable": "^2.23.0"
+  }
 }
