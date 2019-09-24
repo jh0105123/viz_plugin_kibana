@@ -1,3 +1,6 @@
+import * as $ from 'jquery';
+import pivotUI from 'PivotTable';
+
 class VisController {
   constructor(el, vis) {
     this.vis = vis;
@@ -13,6 +16,18 @@ class VisController {
   }
 
   render(visData, status) {
+
+    $("#output").pivotUI(
+      [
+          {color: "blue", shape: "circle"},
+          {color: "red", shape: "triangle"}
+      ],
+      {
+          rows: ["color"],
+          cols: ["shape"]
+      }
+  );
+
     // this.container.innerHTML = '';
 
     // const table = visData.tables[0];
