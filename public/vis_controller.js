@@ -1,6 +1,7 @@
 import jQuery from 'jquery';
-window.$ = window.jQuery = jQuery;
+import 'pivottable';
 
+window.$ = window.jQuery = jQuery;
 
 class VisController {
   constructor(el, vis) {
@@ -73,7 +74,6 @@ class VisController {
     );
 
     return (
-
       <div id="output"></div>
     );
   }
