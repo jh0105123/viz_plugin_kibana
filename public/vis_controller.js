@@ -32,22 +32,22 @@ class VisController {
     //   }
     // );
 
-    $(".output").pivot(
-      [
-          {color: "blue", shape: "circle"},
-          {color: "red", shape: "triangle"}
-      ],
-      {
-          rows: ["color"],
-          cols: ["shape"]
-      }
-  );
+  //   $(".output").pivot(
+  //     [
+  //         {color: "blue", shape: "circle"},
+  //         {color: "red", shape: "triangle"}
+  //     ],
+  //     {
+  //         rows: ["color"],
+  //         cols: ["shape"]
+  //     }
+  // );
 
     // this.container.innerHTML = '';
     this.container.innerHTML = '';
 
     const pivotDiv = document.createElement(`div`);
-    pivotDiv.className = 'output';
+    // pivotDiv.className = 'output';
     this.container.appendChild(pivotDiv);
 
     // const table = visData.tables[0];
