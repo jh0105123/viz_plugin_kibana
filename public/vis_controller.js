@@ -1,7 +1,7 @@
 import React from 'react';
 import jQuery from 'jquery';
-import 'pivottable';
 import 'jquery-ui';
+import 'pivottable';
 
 window.$ = window.jQuery = jQuery;
 
@@ -21,7 +21,18 @@ class VisController {
 
   render(visData, status) {
 
-    $(".output").pivotUI(
+    // $(".output").pivotUI(
+    //   [
+    //       {color: "blue", shape: "circle"},
+    //       {color: "red", shape: "triangle"}
+    //   ],
+    //   {
+    //       rows: ["color"],
+    //       cols: ["shape"]
+    //   }
+    // );
+
+    $(".output").pivot(
       [
           {color: "blue", shape: "circle"},
           {color: "red", shape: "triangle"}
@@ -30,7 +41,7 @@ class VisController {
           rows: ["color"],
           cols: ["shape"]
       }
-    );
+  );
 
     // this.container.innerHTML = '';
     this.container.innerHTML = '';
