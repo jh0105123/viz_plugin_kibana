@@ -4,17 +4,6 @@ import 'pivottable';
 
 window.$ = window.jQuery = jQuery;
 
-$(".output").pivotUI(
-  [
-      {color: "blue", shape: "circle"},
-      {color: "red", shape: "triangle"}
-  ],
-  {
-      rows: ["color"],
-      cols: ["shape"]
-  }
-);
-
 class VisController {
   constructor(el, vis) {
     this.vis = vis;
@@ -31,6 +20,17 @@ class VisController {
 
   render(visData, status) {
 
+    $(".output").pivotUI(
+      [
+          {color: "blue", shape: "circle"},
+          {color: "red", shape: "triangle"}
+      ],
+      {
+          rows: ["color"],
+          cols: ["shape"]
+      }
+    );
+    
     // this.container.innerHTML = '';
     this.container.innerHTML = '';
 
