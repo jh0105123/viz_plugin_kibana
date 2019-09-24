@@ -44,7 +44,7 @@ class VisController {
   // );
 
     // this.container.innerHTML = '';
-    this.container.innerHTML = '<div id=${output}></div>';
+    this.container.innerHTML = '<div id="output"></div>';
 
     // const pivotDiv = document.createElement(`div`);
     // // pivotDiv.className = 'output';
