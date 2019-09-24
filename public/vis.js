@@ -3,6 +3,7 @@ import { uiModules } from 'ui/modules';
 
 import { Schemas } from 'ui/vis/editors/default/schemas';
 
+import { VisFactoryProvider } from 'ui/vis/vis_factory';
 import { VisTypesRegistryProvider } from 'ui/registry/vis_types';
 import visTemplate from './templates/pivot_table.html';
 import editorTemplate from './templates/pivot_table_editor.html';
