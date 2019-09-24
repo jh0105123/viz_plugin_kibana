@@ -1,10 +1,11 @@
-
+import exampleRoute from './server/routes/example';
 
 export default function (kibana) {
   return new kibana.Plugin({
     require: ['elasticsearch'],
-    name: 'viz_pivot',
+
     uiExports: {
+      visTypes: [ 'plugins/pivot_table/vis' ]
     },
 
     config(Joi) {
@@ -12,5 +13,13 @@ export default function (kibana) {
         enabled: Joi.boolean().default(true),
       }).default();
     },
+
+
+    init(server, options) {
+      // Add server routes and initalize the plugin here
+      exampleRoute(server);
+    }
+
+
   });
-}
+};

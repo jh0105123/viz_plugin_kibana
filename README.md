@@ -1,37 +1,86 @@
-# viz_pivot
+## Pivot Table Plugin for Kibana 5
 
-> pivot
+A visualization plugin for kibana 5.x .
 
----
+Pivot tables are interactive tables that allow the user to group and summarize large amounts of data in a concise.
+
+Basically a wrapper of [Nicolas Kruchten's Pivot Table](http://nicolas.kruchten.com/pivottable/).
+
+![image](https://raw.githubusercontent.com/datavoyagerhk/kibana-pivot-table/master/image/simple_demo.gif)
+
+## Feature
+
+* drag and drop UI
+* filtering
+* charts
+
+## Installation
+
+```sh
+cd YOUR DOWNLOAD-DIRECTORY
+wget https://github.com/datavoyagerhk/kibana-pivot-table/releases/download/v0.1.0/pivot_table-v0.1.0.zip
+$KIBANA_HOME/bin/kibana-plugin install file:///YOUR-DOWNLOAD-DIRECTORY/pivot_table-v0.1.0.zip
+```
+
+example for Kibana installed with RPM on CentOS
+```
+wget https://github.com/datavoyagerhk/kibana-pivot-table/releases/download/v0.1.0/pivot_table-v0.1.0.zip
+/usr/share/bin/kibana-plugin install file:///tmp/pivot_table-v0.1.0.zip
+```
 
 ## development
 
-See the [kibana contributing guide](https://github.com/elastic/kibana/blob/master/CONTRIBUTING.md) for instructions setting up your development environment. Once you have completed that, use the following yarn scripts.
+### Setting up development environment 
 
-  - `yarn kbn bootstrap`
+1. See the [kibana contributing guide](https://github.com/elastic/kibana/blob/master/CONTRIBUTING.md) for instructions setting up your development environment. Once you have completed that, use the following npm tasks.
 
-    Install dependencies and crosslink Kibana and all projects/plugins.
+  - `npm start`
 
-    > ***IMPORTANT:*** Use this script instead of `yarn` to install dependencies when switching branches, and re-run it whenever your dependencies change.
+    Start kibana and have it include this plugin
 
-  - `yarn start`
+  - `npm start -- --config kibana.yml`
 
-    Start kibana and have it include this plugin. You can pass any arguments that you would normally send to `bin/kibana`
+    You can pass any argument that you would normally send to `bin/kibana` by putting them after `--` when running `npm start`
 
-      ```
-      yarn start --elasticsearch.hosts http://localhost:9220
-      ```
+  - `npm run build`
 
-  - `yarn build`
+    Build a distributable archive
 
-    Build a distributable archive of your plugin.
+  - `npm run test:browser`
 
-  - `yarn test:browser`
+    Run the browser tests in a real web browser
 
-    Run the browser tests in a real web browser.
+  - `npm run test:server`
 
-  - `yarn test:mocha`
+    Run the server tests using mocha
 
-    Run the server tests using mocha.
+For more information about any of these commands run `npm run ${task} -- --help`.
 
-For more information about any of these commands run `yarn ${task} --help`. For a full list of tasks checkout the `package.json` file, or run `yarn run`.
+2. Clone this repository to the plugins folder of kibana.
+
+3. Modify the contents of the config.json file to point to a local Kibana installation directory.
+
+### Coding guidelines
+
+Please also see [wiki of Nicolas Kruchten's Pivot Table](https://github.com/nicolaskruchten/pivottable/wiki).
+
+### Building a package 
+
+1. First go to the directory of the plugin
+	
+	```
+	cd $KIBANA_HOME/plugins/pivot_table
+	```
+
+2. Modify the contents of package.json
+
+	change the 'kibana' and '@elastic/plugin-helpers' version to the version of kibana you want to deploy.
+
+3. Then create bundled zip file
+	
+	```
+	npm run build
+	```
+
+The bundled zip file will locate in:
+```cd $KIBANA_HOME/kibana/plugins/pivot_table/build```

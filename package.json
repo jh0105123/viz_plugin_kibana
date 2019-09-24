@@ -1,36 +1,32 @@
 {
-  "name": "viz_pivot",
-  "version": "0.0.0",
-  "description": "pivot",
+  "name": "pivot_table",
+  "version": "0.1.0",
+  "description": "pivot_table",
   "main": "index.js",
   "kibana": {
-    "version": "7.1.1",
-    "templateVersion": "1.0.0"
+    "version": "5.6.10"
   },
   "scripts": {
-    "preinstall": "node ../../preinstall_check",
-    "kbn": "node ../../scripts/kbn",
-    "es": "node ../../scripts/es",
-    "lint": "eslint .",
+    "lint": "eslint",
     "start": "plugin-helpers start",
     "test:server": "plugin-helpers test:server",
     "test:browser": "plugin-helpers test:browser",
-    "build": "plugin-helpers build"
+    "build": "plugin-helpers build",
+    "postinstall": "plugin-helpers postinstall"
   },
   "devDependencies": {
-    "@elastic/eslint-config-kibana": "link:../../packages/eslint-config-kibana",
-    "@elastic/eslint-import-resolver-kibana": "link:../../packages/kbn-eslint-import-resolver-kibana",
-    "@kbn/expect": "link:../../packages/kbn-expect",
-    "@kbn/plugin-helpers": "link:../../packages/kbn-plugin-helpers",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
-    "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jest": "^22.4.1",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-mocha": "^5.3.0",
-    "eslint-plugin-no-unsanitized": "^3.0.2",
-    "eslint-plugin-prefer-object-spread": "^1.2.1",
-    "eslint-plugin-react": "^7.12.4"
+    "@elastic/eslint-config-kibana": "0.0.2",
+    "@elastic/plugin-helpers": "5.1.1",
+    "babel-eslint": "4.1.8",
+    "chai": "^3.5.0",
+    "eslint": "1.10.3",
+    "eslint-plugin-mocha": "1.1.0"
+  },
+  "dependencies": {
+    "c3": "^0.4.11"
+  },
+  "build": {
+    "git": {},
+    "date": "Thu Jan 19 2017 02:37:24 GMT-0500 (EST)"
   }
 }
