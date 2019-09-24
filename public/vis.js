@@ -19,6 +19,7 @@ function TestVisProvider(Private) {
       component: VisController,
       defaults: {
         // add default parameters
+        type: 'metric',
         fontSize: '30'
       },
     },
