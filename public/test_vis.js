@@ -3,7 +3,6 @@ import './test_vis.less';
 import optionsTemplate from './options_template.html';
 import { VisController } from './vis_controller';
 
-import { CATEGORY } from 'ui/vis/vis_category';
 import { VisFactoryProvider } from 'ui/vis/vis_factory';
 import { VisTypesRegistryProvider } from 'ui/registry/vis_types';
 import { VisSchemasProvider } from 'ui/vis/editors/default/schemas';
@@ -17,7 +16,6 @@ function TestVisProvider(Private) {
     title: 'Test Vis',
     icon: 'fa fa-gear',
     description: 'test vuis',
-    category: CATEGORY.OTHER,
     visualization: VisController,
     visConfig: {
       defaults: {
