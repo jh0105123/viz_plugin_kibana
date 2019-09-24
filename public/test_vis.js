@@ -13,7 +13,7 @@ function TestVisProvider(Private) {
   return VisFactory.createBaseVisualization({
     name: 'test_vis',
     title: 'Test Vis',
-    icon: 'fa fa-gear',
+    icon: 'list',
     description: 'test vuis',
     visualization: VisController,
     visConfig: {
