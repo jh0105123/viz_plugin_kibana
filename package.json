@@ -23,7 +23,7 @@
     "eslint-plugin-mocha": "1.1.0"
   },
   "dependencies": {
-    "c3": "^0.4.11"
+    "c3": "^0.4.23"
   },
   "build": {
     "git": {},
