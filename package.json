@@ -1,4 +1,8 @@
 {
   "name": "viz_pivot",
-  "version": "kibana"
+  "version": "kibana",
+  "dependencies": {
+    "react-dom": "^16.9.0",
+    "react-pivottable": "^0.9.0"
+  }
 }
