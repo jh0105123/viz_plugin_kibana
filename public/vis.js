@@ -22,7 +22,7 @@ import './dist/c3_renderers.js';
 
 VisTypesRegistryProvider.register(PivotTableProvider);
 function PivotTableProvider(Private) {
-
+  const VisFactory = Private(VisFactoryProvider);
   return VisFactory.createBaseVisualization({
     name: 'PivotTable', // the internal id of the visualization
     title: 'PivotTable', // the name shown in the visualize list
