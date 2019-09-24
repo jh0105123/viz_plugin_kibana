@@ -1,8 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import jQuery from 'jquery';
 import 'pivottable';
 
 window.$ = window.jQuery = jQuery;
+
+$(".output").pivotUI(
+  [
+      {color: "blue", shape: "circle"},
+      {color: "red", shape: "triangle"}
+  ],
+  {
+      rows: ["color"],
+      cols: ["shape"]
+  }
+);
 
 class VisController {
   constructor(el, vis) {
@@ -21,6 +32,11 @@ class VisController {
   render(visData, status) {
 
     // this.container.innerHTML = '';
+    this.container.innerHTML = '';
+
+    const pivotDiv = document.createElement(`div`);
+    pivotDiv.className = 'output';
+    this.container.appendChild(pivotDiv);
 
     // const table = visData.tables[0];
     // const metrics = [];
@@ -63,20 +79,15 @@ class VisController {
 
     //   resolve('when done rendering');
     // });
-    $("#output").pivotUI(
-      [
-          {color: "blue", shape: "circle"},
-          {color: "red", shape: "triangle"}
-      ],
-      {
-          rows: ["color"],
-          cols: ["shape"]
-      }
-    );
 
-    return (
-      <div id="output"></div>
-    );
+    // return (
+    //   <div id="output"></div>
+    // );
+
+    return new Promise(resolve => {
+
+      resolve('when done rendering');
+    });
   }
 };
 
