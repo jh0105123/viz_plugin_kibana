@@ -1,4 +1,4 @@
-import './test_vis.less';
+import './vis.less';
 
 import optionsTemplate from './options_template.html';
 import { VisController } from './vis_controller';
@@ -11,10 +11,10 @@ function TestVisProvider(Private) {
   const VisFactory = Private(VisFactoryProvider);
 
   return VisFactory.createBaseVisualization({
-    name: 'test_vis',
-    title: 'Test Vis',
+    name: 'viz_pivot',
+    title: 'Test pivot',
     icon: 'list',
-    description: 'test vuis',
+    description: 'test pivot',
     visualization: VisController,
     visConfig: {
       defaults: {
