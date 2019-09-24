@@ -2,18 +2,6 @@ import jQuery from 'jquery';
 window.$ = window.jQuery = jQuery;
 
 
-$("#output").pivotUI(
-  [
-      {color: "blue", shape: "circle"},
-      {color: "red", shape: "triangle"}
-  ],
-  {
-      rows: ["color"],
-      cols: ["shape"]
-  }
-);
-
-
 class VisController {
   constructor(el, vis) {
     this.vis = vis;
@@ -73,9 +61,20 @@ class VisController {
 
     //   resolve('when done rendering');
     // });
+    $("#output").pivotUI(
+      [
+          {color: "blue", shape: "circle"},
+          {color: "red", shape: "triangle"}
+      ],
+      {
+          rows: ["color"],
+          cols: ["shape"]
+      }
+    );
+
     return (
 
-      <table id="output"></table>
+      <div id="output"></div>
     );
   }
 };
