@@ -50,4 +50,4 @@ function TestVisProvider(Private) {
 // register the provider with the visTypes registry
 VisTypesRegistryProvider.register(TestVisProvider);
 
-export default TestVisProvider;
+//export default TestVisProvider;
