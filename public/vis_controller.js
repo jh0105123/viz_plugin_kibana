@@ -1,5 +1,6 @@
 import React from 'react';
 import jQuery from 'jquery';
+import jQuery from 'jquery-ui';
 import 'pivottable';
 
 window.$ = window.jQuery = jQuery;
@@ -30,7 +31,7 @@ class VisController {
           cols: ["shape"]
       }
     );
-    
+
     // this.container.innerHTML = '';
     this.container.innerHTML = '';
 
