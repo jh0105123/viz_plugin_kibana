@@ -83,7 +83,7 @@ const MyNewVisType = (Private) => {
 }
 
 VisTypesRegistryProvider.register(MyNewVisType);
-
+export default MyNewVisType;
 
 // VisTypesRegistryProvider.register(PivotTableProvider);
 // function PivotTableProvider(Private) {
