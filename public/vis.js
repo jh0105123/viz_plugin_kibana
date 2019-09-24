@@ -1,10 +1,7 @@
-
+import { VisFactoryProvider } from 'ui/vis/vis_factory';
 import { VisTypesRegistryProvider } from 'ui/registry/vis_types';
 import visTemplate from './templates/pivot_table.html';
 import editorTemplate from './templates/pivot_table_editor.html';
-
-import { VisFactoryProvider } from 'ui/vis/vis_factory';
-import { VisTypesRegistryProvider } from 'ui/registry/vis_types'
 
 import 'ui/autoload/styles';
 import './less/main.less';
