@@ -1,6 +1,6 @@
 import React from 'react';
 import jQuery from 'jquery';
-import 'jquery-ui';
+import 'jqueryui';
 import 'pivottable';
 
 window.$ = window.jQuery = jQuery;
