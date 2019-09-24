@@ -1,4 +1,6 @@
-var $ = require('jquery');
+import jQuery from 'jquery';
+window.$ = window.jQuery = jQuery;
+
 
 $("#output").pivotUI(
   [
@@ -10,6 +12,7 @@ $("#output").pivotUI(
       cols: ["shape"]
   }
 );
+
 
 class VisController {
   constructor(el, vis) {
@@ -66,10 +69,14 @@ class VisController {
     //   this.container.appendChild(metricDiv);
     // });
 
-    return new Promise(resolve => {
+    // return new Promise(resolve => {
 
-      resolve('when done rendering');
-    });
+    //   resolve('when done rendering');
+    // });
+    return (
+
+      <table id="output"></table>
+    );
   }
 };
 
