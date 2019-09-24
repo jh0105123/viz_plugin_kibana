@@ -1,5 +1,4 @@
 import * as $ from 'jquery';
-import pivotUI from 'PivotTable';
 
 class VisController {
   constructor(el, vis) {
