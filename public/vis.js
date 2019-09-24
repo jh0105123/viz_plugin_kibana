@@ -15,8 +15,8 @@ function TestVisProvider(Private) {
     title: 'Test pivot',
     icon: 'list',
     description: 'test pivot',
-    visualization: VisController,
     visConfig: {
+      component: VisController,
       defaults: {
         // add default parameters
         fontSize: '30'
