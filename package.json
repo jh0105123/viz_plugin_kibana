@@ -1,13 +1,4 @@
 {
-  "name": "pivot_table",
-  "version": "0.1.0",
-  "description": "pivot_table",
-  "main": "index.js",
-  "kibana": {
-    "version": "7.1.1"
-  },
-  "dependencies": {
-    "c3": "^0.7.9",
-    "d3-brush": "^1.1.3"
-  }
+  "name": "kibana_sample_visualization",
+  "version": "kibana"
 }
