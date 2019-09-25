@@ -20,26 +20,9 @@ class VisController {
   }
 
   render(visData, status) {
+    
     $( document ).ready( function() {
-      alert("hello world");
-      // $(".output").pivotUI(
-      //   [
-      //       {color: "blue", shape: "circle"},
-      //       {color: "red", shape: "triangle"}
-      //   ],
-      //   {
-      //       rows: ["color"],
-      //       cols: ["shape"]
-      //   }
-      // );
-    } );
-
-
-    // this.container.innerHTML = '';
-
-    const pivotDiv = document.createElement(`div`);
-    pivotDiv.innerHTML = '<div id="output">hello</div>';
-    pivotDiv.addEventListener('click',()=>{
+      // alert("hello world");
       $("#output").pivotUI(
         [
             {color: "blue", shape: "circle"},
@@ -50,7 +33,25 @@ class VisController {
             cols: ["shape"]
         }
       );
-    });
+    } );
+
+
+    // this.container.innerHTML = '';
+
+    const pivotDiv = document.createElement(`div`);
+    pivotDiv.innerHTML = '<div id="output">hello</div>';
+    // pivotDiv.addEventListener('click',()=>{
+    //   $("#output").pivotUI(
+    //     [
+    //         {color: "blue", shape: "circle"},
+    //         {color: "red", shape: "triangle"}
+    //     ],
+    //     {
+    //         rows: ["color"],
+    //         cols: ["shape"]
+    //     }
+    //   );
+    // });
     this.container.appendChild(pivotDiv);
 
     // const table = visData.tables[0];
