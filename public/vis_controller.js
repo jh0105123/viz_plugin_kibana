@@ -1,7 +1,7 @@
 import jQuery from 'jquery';
 import 'jqueryui';
 import 'pivottable';
-import 'pivottable/dist/pivot.min.css';
+import 'pivottable/dist/pivottable.css';
 
 window.$ = window.jQuery = jQuery;
 
