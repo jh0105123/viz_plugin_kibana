@@ -5,6 +5,19 @@ import 'pivottable';
 
 window.$ = window.jQuery = jQuery;
 
+$( document ).ready( function() {
+  $(".output").pivotUI(
+    [
+        {color: "blue", shape: "circle"},
+        {color: "red", shape: "triangle"}
+    ],
+    {
+        rows: ["color"],
+        cols: ["shape"]
+    }
+  );
+} );
+
 class VisController {
   constructor(el, vis) {
     this.vis = vis;
@@ -20,17 +33,6 @@ class VisController {
   // }
 
   render(visData, status) {
-
-    $(".output").pivotUI(
-      [
-          {color: "blue", shape: "circle"},
-          {color: "red", shape: "triangle"}
-      ],
-      {
-          rows: ["color"],
-          cols: ["shape"]
-      }
-    );
 
   //   $(".output").pivot(
   //     [
