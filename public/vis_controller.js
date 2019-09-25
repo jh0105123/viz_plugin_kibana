@@ -5,20 +5,6 @@ import 'pivottable';
 
 window.$ = window.jQuery = jQuery;
 
-$( document ).ready( function() {
-  alert("hello world");
-  // $(".output").pivotUI(
-  //   [
-  //       {color: "blue", shape: "circle"},
-  //       {color: "red", shape: "triangle"}
-  //   ],
-  //   {
-  //       rows: ["color"],
-  //       cols: ["shape"]
-  //   }
-  // );
-} );
-
 class VisController {
   constructor(el, vis) {
     this.vis = vis;
@@ -45,6 +31,21 @@ class VisController {
   //         cols: ["shape"]
   //     }
   // );
+
+    $( document ).ready( function() {
+      alert("hello world");
+      // $(".output").pivotUI(
+      //   [
+      //       {color: "blue", shape: "circle"},
+      //       {color: "red", shape: "triangle"}
+      //   ],
+      //   {
+      //       rows: ["color"],
+      //       cols: ["shape"]
+      //   }
+      // );
+    } );
+
 
     // this.container.innerHTML = '';
 
