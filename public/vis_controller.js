@@ -52,8 +52,9 @@ class VisController {
     const pivotDiv = document.createElement(`div`);
     pivotDiv.className = 'output';
     pivotDiv.innerHTML = '<b>hello</b>';
+    pivotDiv.innerHTML = '<div id="output"></div>';
     pivotDiv.addEventListener('click',()=>{
-      $(this).pivotUI(
+      $("#output").pivotUI(
         [
             {color: "blue", shape: "circle"},
             {color: "red", shape: "triangle"}
