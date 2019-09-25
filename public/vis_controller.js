@@ -18,7 +18,10 @@ class VisController {
 
     $( document ).ready( function() {
       $(".output").pivotUI(
-        customData
+        customData,
+        {
+          rows: ["PM"]
+        }
       );
     } );
 
@@ -32,7 +35,6 @@ class VisController {
   }
 
   render(visData, status) {
-
     return new Promise(resolve => {
       resolve('when done rendering');
     });
