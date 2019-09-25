@@ -21,7 +21,7 @@ class VisController {
 
   render(visData, status) {
 
-    $("#output").pivotUI(
+    $(".output").pivotUI(
       [
           {color: "blue", shape: "circle"},
           {color: "red", shape: "triangle"}
@@ -44,11 +44,10 @@ class VisController {
   // );
 
     // this.container.innerHTML = '';
-    this.container.innerHTML = '<div id="output"></div>';
 
-    // const pivotDiv = document.createElement(`div`);
-    // // pivotDiv.className = 'output';
-    // this.container.appendChild(pivotDiv);
+    const pivotDiv = document.createElement(`div`);
+    pivotDiv.className = 'output';
+    this.container.appendChild(pivotDiv);
 
     // const table = visData.tables[0];
     // const metrics = [];
