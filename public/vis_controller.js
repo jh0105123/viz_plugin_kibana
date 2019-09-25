@@ -6,16 +6,17 @@ import 'pivottable';
 window.$ = window.jQuery = jQuery;
 
 $( document ).ready( function() {
-  $(".output").pivotUI(
-    [
-        {color: "blue", shape: "circle"},
-        {color: "red", shape: "triangle"}
-    ],
-    {
-        rows: ["color"],
-        cols: ["shape"]
-    }
-  );
+  alert("hello world");
+  // $(".output").pivotUI(
+  //   [
+  //       {color: "blue", shape: "circle"},
+  //       {color: "red", shape: "triangle"}
+  //   ],
+  //   {
+  //       rows: ["color"],
+  //       cols: ["shape"]
+  //   }
+  // );
 } );
 
 class VisController {
@@ -28,9 +29,9 @@ class VisController {
     this.el.appendChild(this.container);
   }
 
-  // destroy() {
-  //   this.el.innerHTML = '';
-  // }
+  destroy() {
+    this.el.innerHTML = '';
+  }
 
   render(visData, status) {
 
