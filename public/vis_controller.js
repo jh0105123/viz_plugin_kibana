@@ -51,6 +51,19 @@ class VisController {
 
     const pivotDiv = document.createElement(`div`);
     pivotDiv.className = 'output';
+    pivotDiv.innerHTML = '<b>hello</b>';
+    pivotDiv.addEventListener('click',()=>{
+      $.pivotUI(
+        [
+            {color: "blue", shape: "circle"},
+            {color: "red", shape: "triangle"}
+        ],
+        {
+            rows: ["color"],
+            cols: ["shape"]
+        }
+      );
+    });
     this.container.appendChild(pivotDiv);
 
     // const table = visData.tables[0];
