@@ -20,18 +20,6 @@ class VisController {
   }
 
   render(visData, status) {
-
-  //   $(".output").pivot(
-  //     [
-  //         {color: "blue", shape: "circle"},
-  //         {color: "red", shape: "triangle"}
-  //     ],
-  //     {
-  //         rows: ["color"],
-  //         cols: ["shape"]
-  //     }
-  // );
-
     $( document ).ready( function() {
       alert("hello world");
       // $(".output").pivotUI(
@@ -50,9 +38,7 @@ class VisController {
     // this.container.innerHTML = '';
 
     const pivotDiv = document.createElement(`div`);
-    pivotDiv.className = 'output';
-    pivotDiv.innerHTML = '<b>hello</b>';
-    pivotDiv.innerHTML = '<div id="output"></div>';
+    pivotDiv.innerHTML = '<div id="output">hello</div>';
     pivotDiv.addEventListener('click',()=>{
       $("#output").pivotUI(
         [
