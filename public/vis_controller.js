@@ -20,7 +20,7 @@ class VisController {
       $(".output").pivotUI(
         customData,
         {
-          rows: ["PM"]
+          rows: ["PJT코드", "PM", "성명"]
         }
       );
     } );
