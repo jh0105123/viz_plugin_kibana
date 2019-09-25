@@ -21,9 +21,6 @@ class VisController {
     this.container = document.createElement('div');
     this.container.className = 'myvis-container-div';
     this.el.appendChild(this.container);
-
-    this.container.innerHTML = '<div id="output"/>';
-    this.container.appendChild(this.container);
   }
 
   destroy() {
@@ -31,6 +28,9 @@ class VisController {
   }
 
   render(visData, status) {
+    this.container.innerHTML = '<div id="output"/>';
+    this.container.appendChild(this.container);
+
     return new Promise(resolve => {
       resolve('when done rendering');
     });
