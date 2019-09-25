@@ -8,7 +8,7 @@ import customData from './data.json';
 window.$ = window.jQuery = jQuery;
 
 $( document ).ready( function() {
-  $("#output").pivotUI(
+  $(".output").pivotUI(
     customData
   );
 } );
@@ -28,8 +28,9 @@ class VisController {
   }
 
   render(visData, status) {
-    this.container.innerHTML = '<div id="output"/>';
-    this.container.appendChild(this.container);
+    const pivotDiv = document.createElement('div');
+    pivotDiv.className = 'output';
+    this.container.appendChild(pivotDiv);
 
     return new Promise(resolve => {
       resolve('when done rendering');
