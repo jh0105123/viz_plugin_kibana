@@ -3,10 +3,15 @@ import 'jqueryui';
 import 'pivottable';
 
 import 'pivottable/dist/pivottable.css';
-import './vis.less';
 import customData from './data.json';
 
 window.$ = window.jQuery = jQuery;
+
+$( document ).ready( function() {
+  $("#output").pivotUI(
+    customData
+  );
+} );
 
 class VisController {
   constructor(el, vis) {
@@ -16,6 +21,9 @@ class VisController {
     this.container = document.createElement('div');
     this.container.className = 'myvis-container-div';
     this.el.appendChild(this.container);
+
+    this.container.innerHTML = '<div id="output"/>';
+    this.container.appendChild(pivotDiv);
   }
 
   destroy() {
@@ -23,24 +31,7 @@ class VisController {
   }
 
   render(visData, status) {
-    const data = customData;
-
-    $(function(){
-      $('div').removeClass('no-js');
-    });
-
-    $( document ).ready( function() {
-      $("#output").pivotUI(
-        data
-      );
-    } );
-
-    const pivotDiv = document.createElement(`div`);
-    pivotDiv.innerHTML = '<div id="output" class="no-js"/>';
-    this.container.appendChild(pivotDiv);
-
     return new Promise(resolve => {
-
       resolve('when done rendering');
     });
   }
