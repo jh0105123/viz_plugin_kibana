@@ -26,7 +26,7 @@ class VisController {
     const data = customData;
 
     $(function(){
-      $('html').removeClass('no-js');
+      $('div').removeClass('no-js');
     });
 
     $( document ).ready( function() {
