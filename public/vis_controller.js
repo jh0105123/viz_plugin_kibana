@@ -15,9 +15,9 @@ class VisController {
     this.el.appendChild(this.container);
   }
 
-  destroy() {
-    this.el.innerHTML = '';
-  }
+  // destroy() {
+  //   this.el.innerHTML = '';
+  // }
 
   render(visData, status) {
 
