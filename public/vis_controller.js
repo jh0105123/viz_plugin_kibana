@@ -2,6 +2,7 @@ import jQuery from 'jquery';
 import 'jqueryui';
 import 'pivottable';
 import 'pivottable/dist/pivottable.css';
+import customData from './data.json';
 
 window.$ = window.jQuery = jQuery;
 
@@ -20,23 +21,15 @@ class VisController {
   }
 
   render(visData, status) {
-
+    const data = customData;
     $( document ).ready( function() {
-      // alert("hello world");
       $("#output").pivotUI(
-        [
-            {color: "blue", shape: "circle"},
-            {color: "red", shape: "triangle"}
-        ],
-        {
-            rows: ["color"],
-            cols: ["shape"]
-        }
+        data
       );
     } );
 
     const pivotDiv = document.createElement(`div`);
-    pivotDiv.innerHTML = '<div id="output">hello</div>';
+    pivotDiv.innerHTML = '<div id="output"/>';
     this.container.appendChild(pivotDiv);
 
     return new Promise(resolve => {
