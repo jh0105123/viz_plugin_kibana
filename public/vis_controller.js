@@ -23,7 +23,7 @@ class VisController {
     this.el.appendChild(this.container);
 
     this.container.innerHTML = '<div id="output"/>';
-    this.container.appendChild(pivotDiv);
+    this.container.appendChild(this.container);
   }
 
   destroy() {
