@@ -1,6 +1,6 @@
 import './vis.less';
 
-import optionsTemplate from './options_template.js';
+import optionsTemplate from './options_template.html';
 import { VisController } from './vis_controller';
 import { EditorController } from './editor_controller';
 
