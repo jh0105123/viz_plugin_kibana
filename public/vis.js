@@ -21,8 +21,7 @@ function TestVisProvider(Private) {
         // add default parameters
         fontSize: '30'
       },
-    }
-    // ,
+    },
     // editorConfig: {
     //   optionsTemplate: optionsTemplate,
     //   schemas: new Schemas([
@@ -45,9 +44,9 @@ function TestVisProvider(Private) {
     //     }
     //   ]),
     // },
-    // options:{
-    //   showIndexSelection:false
-    // }
+    options:{
+      showIndexSelection:false
+    }
   });
 }
 
