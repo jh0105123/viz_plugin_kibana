@@ -30,7 +30,7 @@ const MyNewVisType = (Private) => {
       optionsTabs: [
         // { title: 'tab 1', template: '<div>test</div>' }
         // ,
-        { title: 'tab 2', template: EditorController }
+        { title: 'tab 2', template: optionsTemplate }
       ],
       schemas: new Schemas([
         {
