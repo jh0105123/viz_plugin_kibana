@@ -27,22 +27,22 @@ const MyNewVisType = (Private) => {
     editorConfig: {
       //optionsTemplate: '<div>test</div>',
       optionsTemplate: optionsTemplate,
-      enableAutoApply: true,
       // optionsTabs: [
       //   { title: 'tab 1', template: '<div>test</div>' },
       //   { title: 'tab 2', template: optionsTemplate }
       // ],
       schemas: new Schemas([
+        // {
+        //   group: 'metrics',
+        //   name: 'metric',
+        //   title: 'Metric',
+        //   min: 1,
+        //   aggFilter: ['!derivative', '!geo_centroid'],
+        //   defaults: [
+        //     { type: 'count', schema: 'metric' }
+        //   ]
+        // }, 
         {
-          group: 'metrics',
-          name: 'metric',
-          title: 'Metric',
-          min: 1,
-          aggFilter: ['!derivative', '!geo_centroid'],
-          defaults: [
-            { type: 'count', schema: 'metric' }
-          ]
-        }, {
           group: 'buckets',
           name: 'segment',
           title: 'Bucket Split',
