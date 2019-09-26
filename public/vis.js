@@ -25,7 +25,7 @@ const MyNewVisType = (Private) => {
       }
     },
     editorConfig: {
-      template: EditorController
+      optionsTemplate: EditorController
       // defaults: {
       //   my: 'custom config'
       // }
