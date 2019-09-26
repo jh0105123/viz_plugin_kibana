@@ -1,5 +1,3 @@
-import { VisFactoryProvider } from 'ui/vis/vis_factory';
-
 class MyEditorController {
     constructor(el, vis) {
       this.el = el;
@@ -7,7 +5,7 @@ class MyEditorController {
       this.config = vis.type.editorConfig;
    }
    async render(visData) {
-      <b>hello</b>
+    //   <b>hello</b>
       
       return 'done rendering';
    }
@@ -15,3 +13,5 @@ class MyEditorController {
       console.log('destroying');
    }
 }
+
+export { MyEditorController };
