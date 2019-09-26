@@ -26,7 +26,7 @@ const MyNewVisType = (Private) => {
     editor: 'default',
     editorConfig: {
       //optionsTemplate: '<div>test</div>',
-      optionsTemplate: EditorController,
+      optionsTemplate: optionsTemplate,
       // optionsTabs: [
       //   { title: 'tab 1', template: '<div>test</div>' },
       //   { title: 'tab 2', template: optionsTemplate }
@@ -50,7 +50,8 @@ const MyNewVisType = (Private) => {
           aggFilter: ['!geohash_grid', '!filter']
         }
       ])
-    }
+    },
+    options: { showIndexSelection: false }
   });
 }
 
