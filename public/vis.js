@@ -25,10 +25,7 @@ const MyNewVisType = (Private) => {
     },
     editor: EditorController,
     editorConfig: {
-      defaults: {
-        my: 'custom config'
-      }
-      // optionsTemplate: optionsTemplate,
+       optionsTemplate: optionsTemplate
       // schemas: new Schemas([
       //   {
       //     group: 'metrics',
