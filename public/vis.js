@@ -13,7 +13,7 @@ function TestVisProvider(Private) {
   return VisFactory.createBaseVisualization({
     name: 'pivot_table',
     title: 'Pivot Table',
-    icon: 'list',
+    icon: 'tableOfContents',
     description: 'Pivot Table',
     visualization: VisController,
     visConfig: {
@@ -43,6 +43,9 @@ function TestVisProvider(Private) {
           aggFilter: ['!geohash_grid', '!filter']
         }
       ]),
+    },
+    options:{
+      showIndexSelection:false
     }
   });
 }

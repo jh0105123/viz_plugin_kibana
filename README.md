@@ -112,4 +112,43 @@
         └── vis_controller.js
     ```
 
-   
+## Visualization Facotry
+`Visualization`을 사용하여 새로운 Visualization을 생성합니다. `VisTypesRegistryProvider`로 시각화를 등록합니다.
+```
+import { VisFactoryProvider } from 'ui/vis/vis_factory';
+import { VisTypesRegistryProvider } from 'ui/registry/vis_types';
+
+const MyNewVisType = (Private) => {
+  const VisFactory = Private(VisFactoryProvider);
+
+  return  VisFactory.createBaseVisualization({
+    name: 'my_new_vis',
+    title: 'My New Vis',
+    icon: 'my_icon',
+    description: 'Cool new chart',
+    ...
+  });
+}
+
+Vis TypesRegistryProvider.register(MyNewVisType);  
+```
+createBaseVisualization 메서드의 매개변수로 아래를 사용할 수 있습니다. 
+- name: vis name, unique, 소문자와 밑줄만 가능
+- title: kibana에서 보여줄 title
+- icon: kibana에서 보여줄 아이콘, [EUI Icon](https://elastic.github.io/eui/#/display/icons)
+- image: icon 대신 image도 사용 가능
+- description: kibana에 표시된 시각화 설명
+- hidden(bool, default:false): 숨기기
+- visConfig: 시각화 매개변수를 보유한 객체
+- visConfig.defaults: 기본 시각화 구성을 유지하는 객체
+- `visualization`: vis를 위한 생성자 함수가 존재하는 곳
+- requestHandler: 요청 핸들러
+- responseHandler: 응답 핸들러
+- editor: 사용자 정의 편집기를 위한 editor 클래스
+- `editorConfig`: 에디터 파라미터를 보관 유지하는 객체
+- options.showTimePicker(bool, default:true): 시간 선택기를 표시하거나 숨김
+- options.showQueryBar(bool, default:true): 쿼리 표시줄 표시하거나 숨김
+- options.showFilterBar(bool, default:true): 필터 막대 표시하거나 숨김
+- `options.showIndexSelection(bool, default:true)`: 인덱스 선택 표시하거나 숨김
+- stage: experimental, 고급에서 시각화 활성화 비활성화 가능
+- feedbackMessage: 
