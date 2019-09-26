@@ -23,7 +23,7 @@ const MyNewVisType = (Private) => {
         fontSize: '30'
       }
     },
-    options: { showIndexSelection: false },
+    options: { showIndexSelection: false }
   });
 }
 
