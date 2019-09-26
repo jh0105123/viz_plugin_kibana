@@ -23,7 +23,6 @@ const MyNewVisType = (Private) => {
         fontSize: '30'
       },
     },
-    editor: EditorController,
     editorConfig: {
        optionsTemplate: optionsTemplate
       // schemas: new Schemas([
