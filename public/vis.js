@@ -25,7 +25,9 @@ const MyNewVisType = (Private) => {
     },
     editor: EditorController,
     editorConfig: {
-      my:'custom config'
+      defaults: {
+        my: 'custom config'
+      }
       // optionsTemplate: optionsTemplate,
       // schemas: new Schemas([
       //   {
