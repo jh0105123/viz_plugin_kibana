@@ -53,7 +53,6 @@ const MyNewVisType = (Private) => {
       // ])
     },
     options: { showIndexSelection: false },
-    requestHandler: 'none',
     responseHandler: 'none'
   });
 }
