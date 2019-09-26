@@ -23,15 +23,13 @@ const MyNewVisType = (Private) => {
         fontSize: '30'
       }
     },
-    editor: 'default',
     editorConfig: {
-      // optionsTemplate: '<div>test</div>',
-      // optionsTemplate: optionsTemplate,
-      optionsTabs: [
-        // { title: 'tab 1', template: '<div>test</div>' }
-        // ,
-        { title: 'tab 2', template: optionsTemplate }
-      ],
+      //optionsTemplate: '<div>test</div>',
+      //optionsTemplate: optionsTemplate,
+      // optionsTabs: [
+      //   { title: 'tab 1', template: '<div>test</div>' },
+      //   { title: 'tab 2', template: optionsTemplate }
+      // ],
       schemas: new Schemas([
         {
           group: 'metrics',
