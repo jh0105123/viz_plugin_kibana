@@ -17,7 +17,7 @@ function TestVisProvider(Private) {
     description: 'Pivot Table',
     // visualization: VisController,
     editor: VisController,
-    visConfig: {
+    editorConfig: {
       defaults: {
         // add default parameters
         fontSize: '30'
