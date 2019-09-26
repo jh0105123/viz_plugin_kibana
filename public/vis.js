@@ -23,12 +23,13 @@ const MyNewVisType = (Private) => {
         fontSize: '30'
       }
     },
+    editor:'default',
     editorConfig: {
-      optionsTemplate: '<div>test</div>',
-      optionsTemplate: optionsTemplate,
+      // optionsTemplate: '<div>test</div>',
+      // optionsTemplate: optionsTemplate,
       optionsTabs: [
         { title: 'tab 1', template: '<div>test</div>' },
-        { title: 'tab 3', template: MyReactComponent }
+        { title: 'tab 3', template: optionsTemplate }
       ],
       schemas: new Schemas([
         {
