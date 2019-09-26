@@ -192,3 +192,4 @@ const MyNewVisType = (Private) => {
 # Visualization Editors
 기본적으로 시각화는 default 편집기를 사용합니다. 이것은 많은 kibana 시각화에서 볼 수 있는 사이드바 편집기입니다. => Options에 추가하는 것
 
+default => schema 꼭 추가
