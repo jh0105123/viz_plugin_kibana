@@ -11,7 +11,7 @@ import { Schemas } from 'ui/vis/editors/default/schemas';
 const MyNewVisType = (Private) => {
   const VisFactory = Private(VisFactoryProvider);
 
-  return VisFactory.createAngularVisualization({
+  return VisFactory.createBaseVisualization({
     name: 'pivot_table',
     title: 'Pivot Table',
     icon: 'tableOfContents',
