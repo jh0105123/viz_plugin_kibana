@@ -22,7 +22,7 @@ function TestVisProvider(Private) {
         fontSize: '30'
       },
     }
-    // ,
+    ,
     // editorConfig: {
     //   optionsTemplate: optionsTemplate,
     //   schemas: new Schemas([
