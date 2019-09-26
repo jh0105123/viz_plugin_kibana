@@ -23,7 +23,7 @@ const MyNewVisType = (Private) => {
         fontSize: '30'
       }
     },
-    editor: 'default',
+    // editor: 'default',
     editorConfig: {
       //optionsTemplate: '<div>test</div>',
       optionsTemplate: optionsTemplate,
@@ -52,7 +52,9 @@ const MyNewVisType = (Private) => {
       //   // }
       // ])
     },
-    options: { showIndexSelection: false }
+    options: { showIndexSelection: false },
+    requestHandler: 'none',
+    responseHandler: 'none'
   });
 }
 
