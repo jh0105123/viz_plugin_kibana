@@ -22,7 +22,7 @@ function TestVisProvider(Private) {
         fontSize: '30'
       },
     }
-    //,
+    // ,
     // editorConfig: {
     //   optionsTemplate: optionsTemplate,
     //   schemas: new Schemas([
@@ -44,6 +44,9 @@ function TestVisProvider(Private) {
     //       aggFilter: ['!geohash_grid', '!filter']
     //     }
     //   ]),
+    // },
+    // options:{
+    //   showIndexSelection:false
     // }
   });
 }
