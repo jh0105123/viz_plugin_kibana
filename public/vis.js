@@ -42,14 +42,14 @@ const MyNewVisType = (Private) => {
         //     { type: 'count', schema: 'metric' }
         //   ]
         // }, 
-        {
-          group: 'buckets',
-          name: 'segment',
-          title: 'Bucket Split',
-          min: 0,
-          max: 1,
-          aggFilter: ['!geohash_grid', '!filter']
-        }
+        // {
+        //   group: 'buckets',
+        //   name: 'segment',
+        //   title: 'Bucket Split',
+        //   min: 0,
+        //   max: 1,
+        //   aggFilter: ['!geohash_grid', '!filter']
+        // }
       ])
     },
     options: { showIndexSelection: false }
