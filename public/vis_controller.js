@@ -20,8 +20,8 @@ class VisController {
       $(".output").pivotUI(
         customData,
         {
-          rows: ["PJT코드", "PM", "성명"],
-          vals: ["2019-08 시간"],
+          rows: ["TEAM"],
+          vals: ["시간"],
           aggregatorName: "Sum"
         }
       );
