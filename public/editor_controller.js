@@ -12,5 +12,3 @@ class EditorController {
       console.log('destroying');
    }
 }
-
-export { EditorController };
