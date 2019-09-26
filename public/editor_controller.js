@@ -5,7 +5,7 @@ class EditorController {
       this.config = vis.type.editorConfig;
    }
    async render(visData) {
-      <b>${this.config.my}</b>
+      <b>test</b>
       return 'done rendering';
    }
    destroy() {

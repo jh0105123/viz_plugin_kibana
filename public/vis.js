@@ -23,8 +23,12 @@ const MyNewVisType = (Private) => {
         fontSize: '30'
       },
     },
+    editor: EditorController,
     editorConfig: {
-       optionsTemplate: optionsTemplate
+      // defaults: {
+      //   my: 'custom config'
+      // }
+      // optionsTemplate: optionsTemplate,
       // schemas: new Schemas([
       //   {
       //     group: 'metrics',
