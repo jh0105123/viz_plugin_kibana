@@ -22,31 +22,32 @@ function TestVisProvider(Private) {
         // add default parameters
         fontSize: '30'
       },
-    },
-    editor: EditorController,
-    editorConfig: {
-      my:'custom config'
-      // optionsTemplate: optionsTemplate,
-      // schemas: new Schemas([
-      //   {
-      //     group: 'metrics',
-      //     name: 'metric',
-      //     title: 'Metric',
-      //     min: 1,
-      //     aggFilter: ['!derivative', '!geo_centroid'],
-      //     defaults: [
-      //       { type: 'count', schema: 'metric' }
-      //     ]
-      //   }, {
-      //     group: 'buckets',
-      //     name: 'segment',
-      //     title: 'Bucket Split',
-      //     min: 0,
-      //     max: 1,
-      //     aggFilter: ['!geohash_grid', '!filter']
-      //   }
-      // ]),
     }
+    // ,
+    // editor: EditorController,
+    // editorConfig: {
+    //   my:'custom config'
+    //   // optionsTemplate: optionsTemplate,
+    //   // schemas: new Schemas([
+    //   //   {
+    //   //     group: 'metrics',
+    //   //     name: 'metric',
+    //   //     title: 'Metric',
+    //   //     min: 1,
+    //   //     aggFilter: ['!derivative', '!geo_centroid'],
+    //   //     defaults: [
+    //   //       { type: 'count', schema: 'metric' }
+    //   //     ]
+    //   //   }, {
+    //   //     group: 'buckets',
+    //   //     name: 'segment',
+    //   //     title: 'Bucket Split',
+    //   //     min: 0,
+    //   //     max: 1,
+    //   //     aggFilter: ['!geohash_grid', '!filter']
+    //   //   }
+    //   // ]),
+    // }
   });
 }
 
