@@ -112,8 +112,8 @@
         └── vis_controller.js
     ```
 
-## Visualization Facotry
-`Visualization`을 사용하여 새로운 Visualization을 생성합니다. `VisTypesRegistryProvider`로 시각화를 등록합니다.
+# Visualization Facotry
+`Visualization`을 사용하여 새로운 Visualization을 생성합니다. `VisTypesRegistryProvider`로 시각화를 `register`합니다.
 ```
 import { VisFactoryProvider } from 'ui/vis/vis_factory';
 import { VisTypesRegistryProvider } from 'ui/registry/vis_types';
@@ -152,3 +152,43 @@ createBaseVisualization 메서드의 매개변수로 아래를 사용할 수 있
 - `options.showIndexSelection(bool, default:true)`: 인덱스 선택 표시하거나 숨김
 - stage: experimental, 고급에서 시각화 활성화 비활성화 가능
 - feedbackMessage: 
+
+## Base Visualization Type
+visualization에는 생성자 함수, render method 및 정리를 위해 호출되는 파괴 메소드가 있는 유형을 제공해야합니다.
+```
+class VisController {
+  constructor(el, vis) {
+      this.el = el;
+      this.vis = vis;
+  }
+
+  destroy() {
+  }
+
+  async render(visData, status) {
+      return 'done rendering';
+  }
+};
+```
+## React Visualization Type
+```
+import { ReactComponent } from './my_react_component';
+
+const MyNewVisType = (Private) => {
+  const VisFactory = Private(VisFactoryProvider);
+
+  return VisFactory.createReactVisualization({
+    name: 'my_new_vis',
+    title: 'My New Vis',
+    icon: 'my_icon',
+    description: 'Cool new chart',
+    visConfig: {
+       component: ReactComponent
+    }
+  });
+}
+```
+
+# Visualization Editors
+기본적으로 시각화는 default 편집기를 사용합니다. 이것은 많은 kibana 시각화에서 볼 수 있는 사이드바 편집기입니다.
+

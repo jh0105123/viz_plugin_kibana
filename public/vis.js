@@ -1,6 +1,7 @@
 import './vis.less';
 
-import optionsTemplate from './options_template.html';
+// import optionsTemplate from './options_template.html';
+import optionsTemplate from './options_template.js';
 import { VisController } from './vis_controller';
 
 import { VisFactoryProvider } from 'ui/vis/vis_factory';
