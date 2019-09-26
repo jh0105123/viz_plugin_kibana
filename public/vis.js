@@ -25,8 +25,8 @@ const MyNewVisType = (Private) => {
     },
     editor:'default',
     editorConfig: {
-      // optionsTemplate: '<div>test</div>',
-      // optionsTemplate: optionsTemplate,
+      optionsTemplate: '<div>test</div>',
+      optionsTemplate: optionsTemplate,
       optionsTabs: [
         { title: 'tab 1', template: '<div>test</div>' },
         { title: 'tab 3', template: optionsTemplate }
