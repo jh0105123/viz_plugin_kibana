@@ -24,11 +24,12 @@ const MyNewVisType = (Private) => {
       }
     },
     editorConfig: {
-      // optionsTemplate: EditorController
-      // // defaults: {
-      // //   my: 'custom config'
-      // // }
+      optionsTemplate: '<div>test</div>',
       optionsTemplate: optionsTemplate,
+      optionsTabs: [
+        { title: 'tab 1', template: '<div>test</div>' },
+        { title: 'tab 3', template: MyReactComponent }
+      ],
       schemas: new Schemas([
         {
           group: 'metrics',
