@@ -23,7 +23,7 @@ const MyNewVisType = (Private) => {
         fontSize: '30'
       }
     },
-    editor: optionsTemplate
+    editor: EditorController
     // ,
     // editorConfig: {
     //   // optionsTemplate: '<div>test</div>',
