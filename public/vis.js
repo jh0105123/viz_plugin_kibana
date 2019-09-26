@@ -11,20 +11,21 @@ import { Schemas } from 'ui/vis/editors/default/schemas';
 const MyNewVisType = (Private) => {
   const VisFactory = Private(VisFactoryProvider);
 
-  return VisFactory.createBaseVisualization({
+  return VisFactory.createAngularVisualization({
     name: 'pivot_table',
     title: 'Pivot Table',
     icon: 'tableOfContents',
     description: 'Pivot Table',
-    visualization: VisController,
+    // visualization: VisController,
     visConfig: {
+      template: VisController,
       defaults: {
         // add default parameters
         fontSize: '30'
-      },
+      }
     },
-    editor: EditorController,
     editorConfig: {
+      template: EditorController
       // defaults: {
       //   my: 'custom config'
       // }
