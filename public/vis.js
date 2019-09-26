@@ -17,40 +17,40 @@ const MyNewVisType = (Private) => {
     icon: 'tableOfContents',
     description: 'Pivot Table',
     visualization: VisController,
-    // visConfig: {
-    //   defaults: {
-    //     // add default parameters
-    //     fontSize: '30'
-    //   }
-    // },
-    // editorConfig: {
-    //   //optionsTemplate: '<div>test</div>',
-    //   optionsTemplate: optionsTemplate
-    //   // optionsTabs: [
-    //   //   { title: 'tab 1', template: '<div>test</div>' },
-    //   //   { title: 'tab 2', template: optionsTemplate }
-    //   // ],
-    //   // schemas: new Schemas([
-    //   //   // {
-    //   //   //   group: 'metrics',
-    //   //   //   name: 'metric',
-    //   //   //   title: 'Metric',
-    //   //   //   min: 1,
-    //   //   //   aggFilter: ['!derivative', '!geo_centroid'],
-    //   //   //   defaults: [
-    //   //   //     { type: 'count', schema: 'metric' }
-    //   //   //   ]
-    //   //   // }, 
-    //   //   // {
-    //   //   //   group: 'buckets',
-    //   //   //   name: 'segment',
-    //   //   //   title: 'Bucket Split',
-    //   //   //   min: 0,
-    //   //   //   max: 1,
-    //   //   //   aggFilter: ['!geohash_grid', '!filter']
-    //   //   // }
-    //   // ])
-    // },
+    visConfig: {
+      defaults: {
+        // add default parameters
+        fontSize: '30'
+      }
+    },
+    editorConfig: {
+      //optionsTemplate: '<div>test</div>',
+      //optionsTemplate: optionsTemplate
+      // optionsTabs: [
+      //   { title: 'tab 1', template: '<div>test</div>' },
+      //   { title: 'tab 2', template: optionsTemplate }
+      // ],
+      // schemas: new Schemas([
+      //   // {
+      //   //   group: 'metrics',
+      //   //   name: 'metric',
+      //   //   title: 'Metric',
+      //   //   min: 1,
+      //   //   aggFilter: ['!derivative', '!geo_centroid'],
+      //   //   defaults: [
+      //   //     { type: 'count', schema: 'metric' }
+      //   //   ]
+      //   // }, 
+      //   // {
+      //   //   group: 'buckets',
+      //   //   name: 'segment',
+      //   //   title: 'Bucket Split',
+      //   //   min: 0,
+      //   //   max: 1,
+      //   //   aggFilter: ['!geohash_grid', '!filter']
+      //   // }
+      // ])
+    },
     options: { showIndexSelection: false },
   });
 }
