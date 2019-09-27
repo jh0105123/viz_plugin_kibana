@@ -28,16 +28,16 @@ export class VisController{
     pivotDiv.className = 'output';
     this.container.appendChild(pivotDiv);
 
-    $( document ).ready( function() {
-      $(".output").pivotUI(
-        value,
-        {
-          // rows: ["TEAM"],
-          // vals: ["시간"],
-          //aggregatorName: value
-        }
-      );
-    } );
+    // $( document ).ready( function() {
+    //   $(".output").pivotUI(
+    //     value,
+    //     {
+    //       // rows: ["TEAM"],
+    //       // vals: ["시간"],
+    //       //aggregatorName: value
+    //     }
+    //   );
+    // } );
 
     alert(value);
 
