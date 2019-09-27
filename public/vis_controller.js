@@ -22,7 +22,6 @@ export class VisController{
   }
 
   render(visData, status) {
-    const value = visData.tables;
     // const value = visData.rows[0];
 
     const pivotDiv = document.createElement('div');
@@ -31,7 +30,7 @@ export class VisController{
 
     $( document ).ready( function() {
       $(".output").pivotUI(
-        value,
+        visData,
         {
           // rows: ["TEAM"],
           // vals: ["시간"],
@@ -40,7 +39,7 @@ export class VisController{
       );
     } );
 
-    alert(value);
+    // alert(value);
 
     return new Promise(resolve => {
       resolve('when done rendering');
