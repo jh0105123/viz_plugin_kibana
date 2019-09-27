@@ -18,10 +18,10 @@ const MyNewVisType = (Private) => {
     description: 'Pivot Table',
     visualization: VisController,
     visConfig: {
-      defaults: {
-        // add default parameters
-        fontSize: '30'
-      }
+      // defaults: {
+      //   // add default parameters
+      //   fontSize: '30'
+      // }
     },
     editorConfig: {
       optionsTemplate: optionsTemplate,
