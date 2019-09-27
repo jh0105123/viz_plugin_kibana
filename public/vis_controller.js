@@ -8,7 +8,7 @@ import customData from './data.json';
 
 window.$ = window.jQuery = jQuery;
 
-export class VisController extends  Component{
+export class VisController extends Component{
   constructor(props) {
     super(props);
     this.state = {};
@@ -21,7 +21,7 @@ export class VisController extends  Component{
   };
 
   render(){
-    <div>hello</div>
+    retrun (<div>hello</div>);
     // let metricsHtml;
     // if(this.props.visData){
     //   metricsHtml = _rederMetric;
