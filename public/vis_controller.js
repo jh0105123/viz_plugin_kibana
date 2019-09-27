@@ -37,7 +37,7 @@ export class VisController{
   }
 
   render(visData, status) {
-    const value = visData.columns.name;
+    const value = visData.columns[0].name;
 
     alert(value);
 
