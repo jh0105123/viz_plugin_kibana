@@ -30,6 +30,8 @@ export class VisController{
     const pivotDiv = document.createElement('div');
     pivotDiv.className = 'output';
     this.container.appendChild(pivotDiv);
+
+    alert(vis);
   }
 
   destroy() {
@@ -40,7 +42,7 @@ export class VisController{
     const config = this.vis.params.metric;
 
     alert(config);
-    
+
     return new Promise(resolve => {
       resolve('when done rendering');
     });
