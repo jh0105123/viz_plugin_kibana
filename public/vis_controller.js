@@ -16,17 +16,21 @@ export class VisController{
     this.container.className = 'myvis-container-div';
     this.el.appendChild(this.container);
 
-    el.table = {
-      data: [],
-      config: {
-              rows: [],
-              cols: [],
-              aggregatorName: "Count",
-              vals: []
-            },
-      editMode: false,
-      pristine: true
-    };
+    const pivotDiv = document.createElement('div');
+    pivotDiv.className = 'output';
+    this.container.appendChild(pivotDiv);
+
+    $( document ).ready( function() {
+      $(".output").pivotUI(
+        [],
+        {
+          rows: [],
+          cols: [],
+          aggregatorName: "Count",
+          vals: []
+        }
+      );
+    } );
   }
 
   destroy() {
@@ -34,7 +38,7 @@ export class VisController{
   }
 
   render(visData, status) {
-    // //const value = visData.columns[0].aggConfig.fieldFormatter('text')(value);
+    const value = visData.columns[0].Name;
 
     // const pivotDiv = document.createElement('div');
     // pivotDiv.className = 'output';
@@ -51,7 +55,7 @@ export class VisController{
     //   );
     // } );
 
-    //alert(value);
+    alert(value);
 
     return new Promise(resolve => {
       resolve('when done rendering');
