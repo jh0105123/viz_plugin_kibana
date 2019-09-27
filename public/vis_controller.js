@@ -22,24 +22,20 @@ export class VisController{
   }
 
   render(visData, status) {
-    // const value = visData.rows[0];
-
     const pivotDiv = document.createElement('div');
     pivotDiv.className = 'output';
     this.container.appendChild(pivotDiv);
 
-    $( document ).ready( function() {
-      $(".output").pivotUI(
-        visData,
-        {
-          // rows: ["TEAM"],
-          // vals: ["시간"],
-          //aggregatorName: value
-        }
-      );
-    } );
-
-    // alert(value);
+    // $( document ).ready( function() {
+    //   $(".output").pivotUI(
+    //     visData,
+    //     {
+    //       // rows: ["TEAM"],
+    //       // vals: ["시간"],
+    //       //aggregatorName: value
+    //     }
+    //   );
+    // } );
 
     return new Promise(resolve => {
       resolve('when done rendering');
