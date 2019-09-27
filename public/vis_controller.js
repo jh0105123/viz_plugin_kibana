@@ -22,7 +22,7 @@ export class VisController{
   }
 
   render(visData, status) {
-    const row = visData.row[0];
+    const row = visData.rows[0];
     const value = visData.columns[0].aggConfig.fieldFormatter('text')(row);
 
     const pivotDiv = document.createElement('div');
