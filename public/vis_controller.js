@@ -26,8 +26,7 @@ export class VisController{
         {
           rows: [],
           cols: [],
-          aggregatorName: "Count",
-          vals: []
+          aggregatorName: "Count"
         }
       );
     } );
@@ -38,7 +37,7 @@ export class VisController{
   }
 
   render(visData, status) {
-    const value = visData.columns[0].Name;
+    // const value = visData.columns[0].Name;
 
     // const pivotDiv = document.createElement('div');
     // pivotDiv.className = 'output';
@@ -55,7 +54,7 @@ export class VisController{
     //   );
     // } );
 
-    alert(value);
+    alert(visData);
 
     return new Promise(resolve => {
       resolve('when done rendering');
