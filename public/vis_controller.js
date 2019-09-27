@@ -8,23 +8,29 @@ import customData from './data.json';
 window.$ = window.jQuery = jQuery;
 
 export class VisController{
-  constructor(el, vis) {
-    this.vis = vis;
-    this.el = el;
-
-    this.container = document.createElement('div');
-    this.container.className = 'myvis-container-div';
-    this.el.appendChild(this.container);
+  constructor(props) {
+    super(props);
+    this.state = {};
   }
 
-  destroy() {
-    this.el.innerHTML = '';
-  }
+  // constructor(el, vis) {
+  //   this.vis = vis;
+  //   this.el = el;
 
-  render(visData, status) {
-    const pivotDiv = document.createElement('div');
-    pivotDiv.className = 'output';
-    this.container.appendChild(pivotDiv);
+  //   this.container = document.createElement('div');
+  //   this.container.className = 'myvis-container-div';
+  //   this.el.appendChild(this.container);
+  // }
+
+  // destroy() {
+  //   this.el.innerHTML = '';
+  // }
+
+  render() {
+    <div>hello</div>
+    // const pivotDiv = document.createElement('div');
+    // pivotDiv.className = 'output';
+    // this.container.appendChild(pivotDiv);
 
     // $( document ).ready( function() {
     //   $(".output").pivotUI(
