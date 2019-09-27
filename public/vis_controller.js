@@ -7,7 +7,7 @@ import customData from './data.json';
 
 window.$ = window.jQuery = jQuery;
 
-class VisController {
+export class VisController extends  Component{
   constructor(el, vis) {
     this.vis = vis;
     this.el = el;
@@ -37,9 +37,6 @@ class VisController {
   }
 
   render(visData, status) {
-    const table = visData;
-    
-    alert(table);
 
     return new Promise(resolve => {
       resolve('when done rendering');
@@ -47,4 +44,3 @@ class VisController {
   }
 };
 
-export { VisController };
