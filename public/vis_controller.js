@@ -43,5 +43,3 @@ export class VisController{
     });
   }
 };
-
-export { VisController };
