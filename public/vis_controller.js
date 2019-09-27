@@ -31,9 +31,9 @@ export class VisController{
 
     // $( document ).ready( function() {
     //   $(".output").pivotUI(
-    //     value,
+    //     customData,
     //     {
-    //       // rows: ["TEAM"],
+    //       //rows: ["TEAM"],
     //       // vals: ["시간"],
     //       //aggregatorName: value
     //     }

@@ -20,6 +20,12 @@ const MyNewVisType = (Private) => {
       defaults: {
         // add default parameters
         fontSize: '30',
+        config: {
+          rows: "",
+          cols: "",
+          aggregatorName: "Count",
+          vals:""
+        },
         availableAggregatorOptions:[
           "Count",
           "Count Unique Values",
