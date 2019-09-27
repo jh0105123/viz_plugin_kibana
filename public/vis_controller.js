@@ -1,4 +1,14 @@
 import React, { Component } from 'react';
+import {
+  EuiPage,
+  EuiPageHeader,
+  EuiTitle,
+  EuiPageBody,
+  EuiPageContent,
+  EuiPageContentHeader,
+  EuiPageContentBody,
+  EuiText
+} from '@elastic/eui';
 import jQuery from 'jquery';
 import 'jqueryui';
 import 'pivottable';
@@ -21,7 +31,15 @@ export class VisController extends Component{
   };
 
   render(){
-    retrun (<div>${hello}</div>);
+    retrun (
+    <EuiText>
+      <h3>
+        <FormattedMessage
+          id="pivottable.congratulationsText"
+          defaultMessage="You have successfully created your first Kibana Plugin!"/>
+      </h3>
+    </EuiText>
+    );
     // let metricsHtml;
     // if(this.props.visData){
     //   metricsHtml = _rederMetric;
@@ -72,5 +90,3 @@ export class VisController extends Component{
   //   });
   // }
 };
-
-export default VisController;
