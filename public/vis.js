@@ -2,13 +2,12 @@ import './vis.less';
 
 import optionsTemplate from './options_template.html';
 import { VisController } from './vis_controller';
-import { EditorController } from './editor_controller';
 
 import { VisFactoryProvider } from 'ui/vis/vis_factory';
 import { VisTypesRegistryProvider } from 'ui/registry/vis_types';
 import { Schemas } from 'ui/vis/editors/default/schemas';
 
-const MyNewVisType = (Private) => {
+function TestVisProvider(Private) {
   const VisFactory = Private(VisFactoryProvider);
 
   return VisFactory.createBaseVisualization({
@@ -18,10 +17,10 @@ const MyNewVisType = (Private) => {
     description: 'Pivot Table',
     visualization: VisController,
     visConfig: {
-      // defaults: {
-      //   // add default parameters
-      //   fontSize: '30'
-      // }
+      defaults: {
+        // add default parameters
+        fontSize: '30'
+      },
     },
     editorConfig: {
       optionsTemplate: optionsTemplate,
@@ -44,12 +43,11 @@ const MyNewVisType = (Private) => {
           aggFilter: ['!geohash_grid', '!filter']
         }
       ]),
-    },
-    options: { showIndexSelection: false }
+    }
   });
 }
 
 // register the provider with the visTypes registry
-VisTypesRegistryProvider.register(MyNewVisType);
+VisTypesRegistryProvider.register(TestVisProvider);
 
 //export default TestVisProvider;
