@@ -1,3 +1,4 @@
+import React, { Component } from 'react';
 import jQuery from 'jquery';
 import 'jqueryui';
 import 'pivottable';
@@ -7,41 +8,59 @@ import customData from './data.json';
 
 window.$ = window.jQuery = jQuery;
 
-export class VisController {
-  constructor(el, vis) {
-    this.vis = vis;
-    this.el = el;
-
-    this.container = document.createElement('div');
-    this.container.className = 'myvis-container-div';
-    this.el.appendChild(this.container);
-
-    $( document ).ready( function() {
-      $(".output").pivotUI(
-        customData,
-        {
-          rows: ["TEAM"],
-          vals: ["시간"],
-          aggregatorName: "Count"
-        }
-      );
-    } );
-
-    const pivotDiv = document.createElement('div');
-    pivotDiv.className = 'output';
-    this.container.appendChild(pivotDiv);
+export class VisController extends  Component{
+  constructor(props) {
+    super(props);
+    this.state = {};
   }
 
-  destroy() {
-    this.el.innerHTML = '';
+  _rederMetric=()=>{
+
+    <div>hello</div>
+
+  };
+
+  render(){
+    let metricsHtml;
+    if(this.props.visData){
+      metricsHtml = _rederMetric;
+    }
+    return (<div>{metricsHtml}</div>);
   }
 
-  render(visData, status) {
+  // constructor(el, vis) {
+  //   this.vis = vis;
+  //   this.el = el;
 
-    return new Promise(resolve => {
-      resolve('when done rendering');
-    });
-  }
+  //   this.container = document.createElement('div');
+  //   this.container.className = 'myvis-container-div';
+  //   this.el.appendChild(this.container);
+
+  //   $( document ).ready( function() {
+  //     $(".output").pivotUI(
+  //       customData,
+  //       {
+  //         rows: ["TEAM"],
+  //         vals: ["시간"],
+  //         aggregatorName: "Count"
+  //       }
+  //     );
+  //   } );
+
+  //   const pivotDiv = document.createElement('div');
+  //   pivotDiv.className = 'output';
+  //   this.container.appendChild(pivotDiv);
+  // }
+
+  // destroy() {
+  //   this.el.innerHTML = '';
+  // }
+
+  // render(visData, status) {
+
+  //   return new Promise(resolve => {
+  //     resolve('when done rendering');
+  //   });
+  // }
 };
 
-export { VisController };
