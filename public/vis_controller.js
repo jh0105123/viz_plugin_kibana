@@ -21,11 +21,12 @@ export class VisController extends  Component{
   };
 
   render(){
-    let metricsHtml;
-    if(this.props.visData){
-      metricsHtml = _rederMetric;
-    }
-    return (<div>hello</div>);
+    <div>hello</div>
+    // let metricsHtml;
+    // if(this.props.visData){
+    //   metricsHtml = _rederMetric;
+    // }
+    // return (<div>hello</div>);
   }
 
   componentDidMount() {
