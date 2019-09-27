@@ -15,9 +15,9 @@ export class VisController extends  Component{
   }
 
   _rederMetric=()=>{
-
-    <div>hello</div>
-
+    return(
+      <div>hello</div>
+    );
   };
 
   render(){
