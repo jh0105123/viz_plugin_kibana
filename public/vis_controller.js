@@ -15,6 +15,22 @@ export class VisController{
     this.container = document.createElement('div');
     this.container.className = 'myvis-container-div';
     this.el.appendChild(this.container);
+
+    const data = vis.indexPattern.originalBody.fields;
+    const pivotDiv = document.createElement('div');
+    pivotDiv.className = 'output';
+    this.container.appendChild(pivotDiv);
+
+    $( document ).ready( function() {
+      $(".output").pivotUI(
+        data,
+        {
+          //rows: ["TEAM"],
+          // vals: ["시간"],
+          //aggregatorName: value
+        }
+      );
+    } );
   }
 
   destroy() {
@@ -23,24 +39,6 @@ export class VisController{
 
   // 변화 감지 이벤트 받는 곳
   async render(visData, status) {
-    // const value = visData.rows[0];
-
-    // const pivotDiv = document.createElement('div');
-    // pivotDiv.className = 'output';
-    // this.container.appendChild(pivotDiv);
-
-    // $( document ).ready( function() {
-    //   $(".output").pivotUI(
-    //     customData,
-    //     {
-    //       //rows: ["TEAM"],
-    //       // vals: ["시간"],
-    //       //aggregatorName: value
-    //     }
-    //   );
-    // } );
-
-    // alert(value);
 
     return new Promise(resolve => {
       resolve('when done rendering');
