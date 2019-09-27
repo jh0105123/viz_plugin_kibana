@@ -15,9 +15,9 @@ export class VisController extends  Component{
   }
 
   _rederMetric=()=>{
-    return(
-      <div>hello</div>
-    );
+    // return(
+    //   <div>hello</div>
+    // );
   };
 
   render(){
@@ -25,7 +25,7 @@ export class VisController extends  Component{
     if(this.props.visData){
       metricsHtml = _rederMetric;
     }
-    return (<div>{metricsHtml}</div>);
+    return (<div>hello</div>);
   }
 
   // constructor(el, vis) {
