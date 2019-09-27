@@ -15,21 +15,6 @@ export class VisController{
     this.container = document.createElement('div');
     this.container.className = 'myvis-container-div';
     this.el.appendChild(this.container);
-
-    $( document ).ready( function() {
-      $(".output").pivotUI(
-        customData,
-        {
-          rows: ["TEAM"],
-          vals: ["시간"],
-          aggregatorName: "Count"
-        }
-      );
-    } );
-
-    const pivotDiv = document.createElement('div');
-    pivotDiv.className = 'output';
-    this.container.appendChild(pivotDiv);
   }
 
   destroy() {
@@ -38,6 +23,21 @@ export class VisController{
 
   render(visData, status) {
     const value = visData.columns[0].name;
+
+    const pivotDiv = document.createElement('div');
+    pivotDiv.className = 'output';
+    this.container.appendChild(pivotDiv);
+
+    $( document ).ready( function() {
+      $(".output").pivotUI(
+        customData,
+        {
+          rows: ["TEAM"],
+          vals: ["시간"],
+          aggregatorName: value
+        }
+      );
+    } );
 
     alert(value);
 
