@@ -22,7 +22,7 @@ class VisController {
         {
           rows: ["TEAM"],
           vals: ["시간"],
-          aggregatorName: "Sum"
+          aggregatorName: "Count"
         }
       );
     } );
