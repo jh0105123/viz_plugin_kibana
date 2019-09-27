@@ -22,7 +22,7 @@ export class VisController{
   }
 
   render(visData, status) {
-    const value = visData.columns[0].aggConfig;
+    const value = visData.columns[0].aggConfig.fieldFormatter('text');
 
     const pivotDiv = document.createElement('div');
     pivotDiv.className = 'output';
@@ -39,7 +39,7 @@ export class VisController{
       );
     } );
 
-    alert(value.fieldFormatter('text'));
+    alert(value);
 
     return new Promise(resolve => {
       resolve('when done rendering');
