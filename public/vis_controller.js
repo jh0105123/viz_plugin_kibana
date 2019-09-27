@@ -37,7 +37,10 @@ export class VisController{
   }
 
   render(visData, status) {
+    const config = this.vis.params.metric;
 
+    alert(config);
+    
     return new Promise(resolve => {
       resolve('when done rendering');
     });
