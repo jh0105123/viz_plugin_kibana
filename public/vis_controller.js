@@ -22,7 +22,7 @@ export class VisController{
 
     $( document ).ready( function() {
       $(".output").pivotUI(
-        [],
+        this.vis.table.data,
         {
           rows: [],
           cols: [],
@@ -54,7 +54,7 @@ export class VisController{
     //   );
     // } );
 
-    alert(visData);
+    // alert(visData);
 
     return new Promise(resolve => {
       resolve('when done rendering');
