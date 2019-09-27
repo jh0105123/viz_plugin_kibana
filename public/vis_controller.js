@@ -102,4 +102,8 @@ export class VisController{
 
       resolve('when done rendering');
     });
+  }
 };
+
+export { VisController };
+
