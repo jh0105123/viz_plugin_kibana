@@ -37,6 +37,10 @@ class VisController {
   }
 
   render(visData, status) {
+    const table = visData.tables[0];
+    
+    alert(table);
+
     return new Promise(resolve => {
       resolve('when done rendering');
     });
