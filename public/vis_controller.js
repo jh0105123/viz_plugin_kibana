@@ -22,7 +22,7 @@ export class VisController{
   }
 
   render(visData, status) {
-    const value = visData.columns[0].name;
+    const value = visData.columns[0].aggConfig.fieldFormatter('text')(value);
 
     const pivotDiv = document.createElement('div');
     pivotDiv.className = 'output';
@@ -32,8 +32,8 @@ export class VisController{
       $(".output").pivotUI(
         customData,
         {
-          rows: ["TEAM"],
-          vals: ["시간"],
+          // rows: ["TEAM"],
+          // vals: ["시간"],
           aggregatorName: value
         }
       );
