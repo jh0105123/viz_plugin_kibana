@@ -73,3 +73,4 @@ export class VisController extends Component{
   // }
 };
 
+export default VisController;
