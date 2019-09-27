@@ -28,6 +28,14 @@ export class VisController extends  Component{
     return (<div>hello</div>);
   }
 
+  componentDidMount() {
+    this.props.renderComplete();
+  }
+
+  componentDidUpdate() {
+    this.props.renderComplete();
+  }
+
   // constructor(el, vis) {
   //   this.vis = vis;
   //   this.el = el;
