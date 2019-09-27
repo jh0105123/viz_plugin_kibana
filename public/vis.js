@@ -19,7 +19,28 @@ const MyNewVisType = (Private) => {
     visConfig: {
       defaults: {
         // add default parameters
-        fontSize: '30'
+        fontSize: '30',
+        availableAggregatorOptions:[
+          "Count",
+          "Count Unique Values",
+          "List Unique Values",
+          "Sum",
+          "Integer Sum",
+          "Average",
+          "Minimum",
+          "Maximum",
+          "First",
+          "Last",
+          "Sum over Sum",
+          "80% Upper Bound",
+          "80% Lower Bound",
+          "Sum as Fraction of Total",
+          "Sum as Fraction of Rows",
+          "Sum as Fraction of Columns",
+          "Count as Fraction of Total",
+          "Count as Fraction of Rows",
+          "Count as Fraction of Columns"
+        ]
       },
     },
     editorConfig: {
