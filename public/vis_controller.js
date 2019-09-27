@@ -22,7 +22,8 @@ export class VisController{
   }
 
   render(visData, status) {
-    const value = visData.rows[0];
+    const value = visData.tables;
+    // const value = visData.rows[0];
 
     const pivotDiv = document.createElement('div');
     pivotDiv.className = 'output';
