@@ -37,7 +37,7 @@ class VisController {
   }
 
   render(visData, status) {
-    const table = visData.tables[0];
+    const table = visData;
     
     alert(table);
 
