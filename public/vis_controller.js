@@ -21,7 +21,7 @@ export class VisController extends Component{
   };
 
   render(){
-    retrun (hello);
+    retrun (<div>${hello}</div>);
     // let metricsHtml;
     // if(this.props.visData){
     //   metricsHtml = _rederMetric;
