@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import jQuery from 'jquery';
 import 'jqueryui';
 import 'pivottable';
@@ -8,7 +7,7 @@ import customData from './data.json';
 
 window.$ = window.jQuery = jQuery;
 
-export class VisController extends  Component{
+export class VisController {
   constructor(el, vis) {
     this.vis = vis;
     this.el = el;
@@ -45,3 +44,4 @@ export class VisController extends  Component{
   }
 };
 
+export { VisController };
