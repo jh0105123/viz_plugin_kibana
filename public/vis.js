@@ -70,12 +70,6 @@ const MyNewVisType = (Private) => {
           aggFilter: ['!geohash_grid', '!filter']
         }
       ]),
-    },
-    responseHandler: (response, dimensions) => {
-      return new Promise(resolve => {
-        // do stuff with the response
-        resolve(response);
-      });
     }
   });
 }
