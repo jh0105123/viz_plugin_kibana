@@ -1,11 +1,10 @@
-import './vis.less';
-
-import optionsTemplate from './options_template.html';
-import { VisController } from './vis_controller';
-
 import { VisFactoryProvider } from 'ui/vis/vis_factory';
 import { VisTypesRegistryProvider } from 'ui/registry/vis_types';
 import { Schemas } from 'ui/vis/editors/default/schemas';
+
+import './vis.less';
+import optionsTemplate from './options_template.html';
+import { VisController } from './vis_controller';
 
 const MyNewVisType = (Private) => {
   const VisFactory = Private(VisFactoryProvider);
@@ -57,7 +56,8 @@ const MyNewVisType = (Private) => {
           name: 'metric',
           title: 'Metric',
           min: 1,
-          aggFilter: ['!derivative', '!geo_centroid'],
+          //aggFilter: ['!derivative', '!geo_centroid'],
+          aggFilter: [ 'count', 'avg', 'sum', 'min', 'max', 'cardinality' ],
           defaults: [
             { type: 'count', schema: 'metric' }
           ]
