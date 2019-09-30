@@ -64,6 +64,7 @@ const MyNewVisType = (Private) => {
         }, {
           group: 'buckets',
           name: 'segment',
+          icon: 'fa fa-th',
           title: 'Bucket Split',
           min: 0,
           max: 1,
