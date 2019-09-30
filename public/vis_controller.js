@@ -16,8 +16,7 @@ export class VisController{
     this.container.className = 'myvis-container-div';
     this.el.appendChild(this.container);
 
-    const data = eval(vis);
-    // const data = eval(vis.indexPattern.originalBody.fields);
+    const data = eval(vis.indexPattern.originalBody.fields);
     const pivotDiv = document.createElement('div');
     pivotDiv.className = 'output';
     this.container.appendChild(pivotDiv);
