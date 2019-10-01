@@ -30,7 +30,7 @@ export class VisController{
     
     $( document ).ready( function() {
       $(".output").pivotUI(
-        JSON.stringify(visData.rows[0]),
+        customData,
         {
           //rows: ["TEAM"],
           // vals: ["시간"],
@@ -43,9 +43,12 @@ export class VisController{
     // pivotDiv.className = 'output';
     // this.container.appendChild(pivotDiv);
 
-    return new Promise(resolve => {
+    return(
       <div class="output"></div>
-      resolve('when done rendering');
-    });
+    );
+    // return new Promise(resolve => {
+    //   <div class="output"></div>
+    //   resolve('when done rendering');
+    // });
   }
 };
