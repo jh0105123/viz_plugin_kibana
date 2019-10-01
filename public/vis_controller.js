@@ -1,3 +1,4 @@
+import React from 'react';
 import jQuery from 'jquery';
 import 'jqueryui';
 import 'pivottable';
