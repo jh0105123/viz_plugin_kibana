@@ -28,17 +28,14 @@ export class VisController{
 
   // 변화 감지 이벤트 받는 곳
   async render(visData, status) {
-
-    $( document ).ready( function() {
-      $(".output").pivotUI(
-        customData,
-        {
-          //rows: ["TEAM"],
-          // vals: ["시간"],
-          //aggregatorName: value
-        }
-      );
-    });
+    $(".output").pivotUI(
+      customData,
+      {
+        //rows: ["TEAM"],
+        // vals: ["시간"],
+        //aggregatorName: value
+      }
+    );
     
     return new Promise(resolve => {
       resolve('when done rendering');
