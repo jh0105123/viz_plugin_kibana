@@ -20,6 +20,17 @@ export class VisController{
     const pivotDiv = document.createElement('div');
     pivotDiv.className = 'output';
     this.container.appendChild(pivotDiv);
+
+    $( document ).ready( function() {
+      $(".output").pivotUI(
+        customData,
+        {
+          //rows: ["TEAM"],
+          // vals: ["시간"],
+          //aggregatorName: value
+        }
+      );
+    });
   }
 
   destroy() {
@@ -28,14 +39,6 @@ export class VisController{
 
   // 변화 감지 이벤트 받는 곳
   async render(visData, status) {
-    $(".output").pivotUI(
-      customData,
-      {
-        //rows: ["TEAM"],
-        // vals: ["시간"],
-        //aggregatorName: value
-      }
-    );
     
     return new Promise(resolve => {
       resolve('when done rendering');
