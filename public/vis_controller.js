@@ -16,7 +16,15 @@ export class VisController{
     this.container = document.createElement('div');
     this.container.className = 'myvis-container-div';
     this.el.appendChild(this.container);
+  }
 
+  destroy() {
+    this.el.innerHTML = '';
+  }
+
+  // 변화 감지 이벤트 받는 곳
+  async render(visData, status) {
+    
     $( document ).ready( function() {
       $(".output").pivotUI(
         customData,
@@ -31,14 +39,6 @@ export class VisController{
     const pivotDiv = document.createElement('div');
     pivotDiv.className = 'output';
     this.container.appendChild(pivotDiv);
-  }
-
-  destroy() {
-    this.el.innerHTML = '';
-  }
-
-  // 변화 감지 이벤트 받는 곳
-  async render(visData, status) {
     
     return new Promise(resolve => {
       resolve('when done rendering');
