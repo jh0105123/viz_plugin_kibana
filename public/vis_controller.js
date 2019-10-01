@@ -17,10 +17,6 @@ export class VisController{
     this.container.className = 'myvis-container-div';
     this.el.appendChild(this.container);
 
-    const pivotDiv = document.createElement('div');
-    pivotDiv.className = 'output';
-    this.container.appendChild(pivotDiv);
-
     $( document ).ready( function() {
       $(".output").pivotUI(
         customData,
@@ -31,6 +27,10 @@ export class VisController{
         }
       );
     });
+
+    const pivotDiv = document.createElement('div');
+    pivotDiv.className = 'output';
+    this.container.appendChild(pivotDiv);
   }
 
   destroy() {
