@@ -30,8 +30,8 @@ export class VisController{
   async render(visData, status) {
 
     visData.rows.forEach(r=>{
-      const vals = r.series[0].values;
-      const data = JSON.stringify(vals);
+      //const vals = r.series[0].values;
+      const data = JSON.stringify(r);
 
       $( document ).ready( function() {
         $(".output").pivotUI(
