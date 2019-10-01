@@ -29,9 +29,8 @@ export class VisController{
   // 변화 감지 이벤트 받는 곳
   async render(visData, status) {
 
-    visData.rows.forEach(r=>{
+    visData.rows.forEach(data=>{
       //const vals = r.series[0].values;
-      const data = JSON.stringify(r);
 
       $( document ).ready( function() {
         $(".output").pivotUI(
