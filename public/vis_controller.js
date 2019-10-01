@@ -40,12 +40,14 @@ export class VisController{
   // 변화 감지 이벤트 받는 곳
   async render(visData, status) {
 
-    visData.rows.foreach(r=>{
-      const vals = r.series[0].values;
-      // vals.foreach(v=>
+    visData.rows.foreach(
+    //   r=>{
+    //   const vals = r.series[0].values;
+    //   // vals.foreach(v=>
 
-      // );
-    });
+    //   // );
+    // }
+    );
 
     return new Promise(resolve => {
       resolve('when done rendering');
