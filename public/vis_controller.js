@@ -29,22 +29,17 @@ export class VisController{
   // 변화 감지 이벤트 받는 곳
   async render(visData, status) {
 
-    visData.rows.forEach(data=>{
-      //const vals = r.series[0].values;
-
-      $( document ).ready( function() {
-        $(".output").pivotUI(
-          JSON.stringify(data),
-          {
-            //rows: ["TEAM"],
-            // vals: ["시간"],
-            //aggregatorName: value
-          }
-        );
-      });
-    }
-    );
-
+    $( document ).ready( function() {
+      $(".output").pivotUI(
+        customData,
+        {
+          //rows: ["TEAM"],
+          // vals: ["시간"],
+          //aggregatorName: value
+        }
+      );
+    });
+    
     return new Promise(resolve => {
       resolve('when done rendering');
     });
