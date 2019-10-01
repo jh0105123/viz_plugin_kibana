@@ -34,7 +34,7 @@ export class VisController{
 
       $( document ).ready( function() {
         $(".output").pivotUI(
-          JSON.parse(data),
+          JSON.stringify(data),
           {
             //rows: ["TEAM"],
             // vals: ["시간"],
