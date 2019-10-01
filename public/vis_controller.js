@@ -44,7 +44,7 @@ export class VisController{
     // this.container.appendChild(pivotDiv);
 
     return(
-      <div class="output"></div>
+      <div className="output"></div>
     );
     // return new Promise(resolve => {
     //   <div class="output"></div>
