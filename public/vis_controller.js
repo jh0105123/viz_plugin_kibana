@@ -39,10 +39,12 @@ export class VisController {
   // 컴포넌스가 어떻게 생겼는지 정의하는 역할
   // html 형식의 문자열을 반환하지 않고 뷰가 어떻게 생겼고 어떻게 작동하는지에 대한 정보
   async render(visData, status) {
-    $(".output").pivotUI(customData, {
-      rows: ["TEAM"],
-      vals: ["시간"],
-      aggregatorName: "Sum"
+    $(document).ready(function() {
+      $(".output").pivotUI(customData, {
+        rows: ["TEAM"],
+        vals: ["시간"],
+        aggregatorName: "Sum"
+      });
     });
 
     const pivotDiv = document.createElement("div");
