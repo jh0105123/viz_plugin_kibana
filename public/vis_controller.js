@@ -18,6 +18,10 @@ export class VisController {
     this.container.className = "myvis-container-div";
     this.el.appendChild(this.container);
 
+    const pivotDiv = document.createElement("div");
+    pivotDiv.className = "output";
+    this.container.appendChild(pivotDiv);
+
     // $(document).ready(function() {
     //   $(".output").pivotUI(customData, {
     //     rows: ["TEAM"],
@@ -46,14 +50,6 @@ export class VisController {
         // aggregatorName: "Sum"
       });
     });
-
-    const pivotDiv = document.createElement("div");
-    pivotDiv.className = "output";
-    this.container.appendChild(pivotDiv);
-
-    // return(
-    //   <div className="output"></div>
-    // );
 
     return new Promise(resolve => {
       resolve("when done rendering");
