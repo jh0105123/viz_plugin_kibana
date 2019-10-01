@@ -1,3 +1,4 @@
+// node_module import
 import React from 'react';
 import jQuery from 'jquery';
 import 'jqueryui';
@@ -23,11 +24,13 @@ export class VisController{
   }
 
   // 변화 감지 이벤트 받는 곳
+  // 컴포넌스가 어떻게 생겼는지 정의하는 역할
+  // html 형식의 문자열을 반환하지 않고 뷰가 어떻게 생겼고 어떻게 작동하는지에 대한 정보
   async render(visData, status) {
     
     $( document ).ready( function() {
       $(".output").pivotUI(
-        visData.rows[0],
+        JSON.stringify(visData.rows[0]),
         {
           //rows: ["TEAM"],
           // vals: ["시간"],
@@ -36,11 +39,12 @@ export class VisController{
       );
     });
 
-    const pivotDiv = document.createElement('div');
-    pivotDiv.className = 'output';
-    this.container.appendChild(pivotDiv);
+    // const pivotDiv = document.createElement('div');
+    // pivotDiv.className = 'output';
+    // this.container.appendChild(pivotDiv);
 
     return new Promise(resolve => {
+      <div class="output"></div>
       resolve('when done rendering');
     });
   }
