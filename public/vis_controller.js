@@ -41,9 +41,9 @@ export class VisController {
   async render(visData, status) {
     $(document).ready(function() {
       $(".output").pivotUI(customData, {
-        rows: ["TEAM"],
-        vals: ["시간"],
-        aggregatorName: "Sum"
+        // rows: ["TEAM"],
+        // vals: ["시간"],
+        // aggregatorName: "Sum"
       });
     });
 
