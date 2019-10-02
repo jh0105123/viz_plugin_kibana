@@ -45,7 +45,7 @@ export class VisController {
     });
 
     $(document).ready(function() {
-      $(".output").remove();
+      $(".output").empty();
       $(".output").pivotUI(result, {
         // rows: ["TEAM"],
         // vals: ["시간"],
