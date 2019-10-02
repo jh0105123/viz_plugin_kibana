@@ -33,13 +33,13 @@ export class VisController {
     var result = [];
 
     visData.columns.forEach(column => {
-      columnsName.push(column["name"]);
+      columnsName.push(column["id"]);
     });
 
     visData.rows.forEach(row => {
       var tempObj = {};
       visData.columns.forEach((column, i) => {
-        tempObj[columnsName[i]] = row[i];
+        tempObj[columnsName[i]] = row;
       });
       result.push(tempObj);
     });
