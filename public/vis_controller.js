@@ -17,10 +17,6 @@ export class VisController {
     this.container = document.createElement("div");
     this.container.className = "myvis-container-div";
     this.el.appendChild(this.container);
-
-    // const pivotDiv = document.createElement("div");
-    // pivotDiv.className = "output";
-    // this.container.appendChild(pivotDiv);
   }
 
   // 변화 감지 이벤트 받는 곳
@@ -56,13 +52,6 @@ export class VisController {
   }
 
   _updateUI(result) {
-    // $(document).ready(function() {
-    //   $(".output").pivotUI(result, {
-    //     // rows: ["TEAM"],
-    //     // vals: ["시간"],
-    //     // aggregatorName: "Sum"
-    //   });
-    // });
     $(this.el).pivotUI(result, {
       // rows: ["TEAM"],
       // vals: ["시간"],
