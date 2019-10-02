@@ -38,8 +38,8 @@ export class VisController {
 
     visData.rows.forEach(row => {
       var tempObj = {};
-      visData.columns.forEach(column => {
-        tempObj[columnsName[column]] = row[column];
+      visData.columns.forEach((column, i) => {
+        tempObj[columnsName[i]] = row[column];
       });
       result.push(tempObj);
     });
