@@ -35,7 +35,7 @@ export class VisController {
     //   const value = visData.rows[0][i];
     // });
 
-    const data = eval(visData.rows[0]);
+    const data = JSON.stringify(visData.rows[0]);
 
     $(document).ready(function() {
       $(".output").pivotUI(data, {
