@@ -49,7 +49,6 @@ export class VisController {
       // vals: ["시간"],
       // aggregatorName: "Sum"
     });
-    break;
   }
 
   destroy() {
