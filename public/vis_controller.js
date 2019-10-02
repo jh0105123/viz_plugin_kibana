@@ -40,18 +40,14 @@ export class VisController {
       result.push(tempObj);
     });
 
-    this._updateUI(result);
+    return this._updateUI(result);
 
-    const pivotDiv = document.createElement("div");
-    pivotDiv.className = "output";
-    this.container.appendChild(pivotDiv);
-
-    return new Promise(resolve => {
-      resolve("when done rendering");
-    });
+    // return new Promise(resolve => {
+    //   resolve("when done rendering");
+    // });
   }
 
-  _updateUI(result) {
+  async _updateUI(result) {
     $(this.el).pivotUI(result, {
       // rows: ["TEAM"],
       // vals: ["시간"],
