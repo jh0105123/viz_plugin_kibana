@@ -51,15 +51,15 @@ const MyNewVisType = Private => {
     editorConfig: {
       optionsTemplate: optionsTemplate,
       schemas: new Schemas([
-        // {
-        //   group: "metrics",
-        //   name: "metric",
-        //   title: "Metric",
-        //   min: 1,
-        //   //aggFilter: ['!derivative', '!geo_centroid'],
-        //   aggFilter: ["count", "avg", "sum", "min", "max", "cardinality"],
-        //   defaults: [{ type: "count", schema: "metric" }]
-        // },
+        {
+          group: "metrics",
+          name: "metric",
+          title: "Metric",
+          min: 1,
+          //aggFilter: ['!derivative', '!geo_centroid'],
+          aggFilter: ["count", "avg", "sum", "min", "max", "cardinality"],
+          defaults: [{ type: "count", schema: "metric" }]
+        },
         {
           group: "buckets",
           name: "segment",
