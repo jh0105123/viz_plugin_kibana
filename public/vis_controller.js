@@ -44,13 +44,12 @@ export class VisController {
   }
 
   async _updateUI(result) {
-    return new Promise(resolve => {
-      $(this.el).pivotUI(result, {
-        // rows: ["TEAM"],
-        // vals: ["시간"],
-        // aggregatorName: "Sum"
-      });
+    $(this.el).pivotUI(result, {
+      // rows: ["TEAM"],
+      // vals: ["시간"],
+      // aggregatorName: "Sum"
     });
+    break;
   }
 
   destroy() {
