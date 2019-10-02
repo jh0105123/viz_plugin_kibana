@@ -56,13 +56,6 @@ export class VisController {
   }
 
   _updateUI(result) {
-    const test = function() {
-      $(".output").pivotUI(result, {
-        // rows: ["TEAM"],
-        // vals: ["시간"],
-        // aggregatorName: "Sum"
-      });
-    };
     // $(document).ready(function() {
     //   $(".output").pivotUI(result, {
     //     // rows: ["TEAM"],
@@ -70,6 +63,11 @@ export class VisController {
     //     // aggregatorName: "Sum"
     //   });
     // });
+    $(this.el).pivotUI(result, {
+      // rows: ["TEAM"],
+      // vals: ["시간"],
+      // aggregatorName: "Sum"
+    });
   }
 
   destroy() {
