@@ -29,16 +29,23 @@ export class VisController {
 
   //default response handler
   render(visData, status) {
-    // const metrics = [];
+    var columnsName = [];
+    var result = [];
 
-    // visData.columns.forEach((column, i) => {
-    //   const value = visData.rows[0][i];
-    // });
+    visData.columns.forEach(column => {
+      columnsName.push(column["name"]);
+    });
 
-    const data = '{"col-0-1":2821}"';
+    visData.rows.forEach(row => {
+      var tempObj = {};
+      visData.columns.forEach(column => {
+        tempObj[columnsName[column]] = row[column];
+      });
+      result.push(tempObj);
+    });
 
     $(document).ready(function() {
-      $(".output").pivotUI(data, {
+      $(".output").pivotUI(result, {
         // rows: ["TEAM"],
         // vals: ["시간"],
         // aggregatorName: "Sum"
