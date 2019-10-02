@@ -41,17 +41,15 @@ export class VisController {
     });
 
     return this._updateUI(result);
-
-    // return new Promise(resolve => {
-    //   resolve("when done rendering");
-    // });
   }
 
   async _updateUI(result) {
-    $(this.el).pivotUI(result, {
-      // rows: ["TEAM"],
-      // vals: ["시간"],
-      // aggregatorName: "Sum"
+    return new Promise(resolve => {
+      $(this.el).pivotUI(result, {
+        // rows: ["TEAM"],
+        // vals: ["시간"],
+        // aggregatorName: "Sum"
+      });
     });
   }
 
