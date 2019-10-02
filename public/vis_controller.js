@@ -21,25 +21,33 @@ export class VisController {
     // const pivotDiv = document.createElement("div");
     // pivotDiv.className = "output";
     // this.container.appendChild(pivotDiv);
-
-    // $(document).ready(function() {
-    //   $(".output").pivotUI(customData, {
-    //     rows: ["TEAM"],
-    //     vals: ["시간"],
-    //     aggregatorName: "Sum"
-    //   });
-    // });
-
-    // const pivotDiv = document.createElement("div");
-    // pivotDiv.className = "output";
-    // this.container.appendChild(pivotDiv);
   }
 
   // 변화 감지 이벤트 받는 곳
   // 컴포넌스가 어떻게 생겼는지 정의하는 역할
   // html 형식의 문자열을 반환하지 않고 뷰가 어떻게 생겼고 어떻게 작동하는지에 대한 정보
+
+  //default response handler
   render(visData, status) {
-    this.container.innerHTML = visData.html;
+    // const metrics = [];
+
+    // visData.columns.forEach((column, i) => {
+    //   const value = visData.rows[0][i];
+    // });
+
+    const data = JSON.parse(visData.rows[0]);
+
+    $(document).ready(function() {
+      $(".output").pivotUI(data, {
+        // rows: ["TEAM"],
+        // vals: ["시간"],
+        // aggregatorName: "Sum"
+      });
+    });
+
+    const pivotDiv = document.createElement("div");
+    pivotDiv.className = "output";
+    this.container.appendChild(pivotDiv);
 
     return new Promise(resolve => {
       resolve("when done rendering");
