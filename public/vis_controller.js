@@ -44,14 +44,7 @@ export class VisController {
       result.push(tempObj);
     });
 
-    $(document).ready(function() {
-      $(".output").empty();
-      $(".output").pivotUI(result, {
-        // rows: ["TEAM"],
-        // vals: ["시간"],
-        // aggregatorName: "Sum"
-      });
-    });
+    this._updateUI(result);
 
     const pivotDiv = document.createElement("div");
     pivotDiv.className = "output";
@@ -60,6 +53,23 @@ export class VisController {
     return new Promise(resolve => {
       resolve("when done rendering");
     });
+  }
+
+  _updateUI(result) {
+    const test = function() {
+      $(".output").pivotUI(result, {
+        // rows: ["TEAM"],
+        // vals: ["시간"],
+        // aggregatorName: "Sum"
+      });
+    };
+    // $(document).ready(function() {
+    //   $(".output").pivotUI(result, {
+    //     // rows: ["TEAM"],
+    //     // vals: ["시간"],
+    //     // aggregatorName: "Sum"
+    //   });
+    // });
   }
 
   destroy() {
