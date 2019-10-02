@@ -39,7 +39,7 @@ export class VisController {
     visData.rows.forEach(row => {
       var tempObj = {};
       visData.columns.forEach((column, i) => {
-        tempObj[columnsName[i]] = "123";
+        tempObj = columnsName[i];
       });
       result.push(tempObj);
     });
