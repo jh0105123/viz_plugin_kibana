@@ -53,6 +53,8 @@ export class VisController {
       // vals: ["시간"],
       // aggregatorName: "Sum"
     });
+
+    await Promise.all(result);
   }
 
   destroy() {
