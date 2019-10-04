@@ -18,7 +18,9 @@ export class VisController {
     this.container.className = "myvis-container-div";
     this.el.appendChild(this.container);
 
-    const state = vis.getState();
+    this.pivottableVis = document.createElement("div");
+    this.pivottableVis.className = output;
+    this.container.appendChild(this.pivottableVis);
   }
 
   // 변화 감지 이벤트 받는 곳
@@ -46,7 +48,7 @@ export class VisController {
   }
 
   async _updateUI(result) {
-    $(this.el).pivotUI(result, {
+    $("#output").pivotUI(result, {
       // rows: ["TEAM"],
       // vals: ["시간"],
       // aggregatorName: "Sum"
