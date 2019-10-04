@@ -20,6 +20,7 @@ export class VisController {
 
     this.pivottableVis = document.createElement("div");
     this.pivottableVis.className = "output";
+    this.pivottableVis.style.cssText = "overflow: hidden;";
     this.container.appendChild(this.pivottableVis);
   }
 
@@ -29,21 +30,22 @@ export class VisController {
 
   //default response handler
   async render(visData, status) {
-    return <div>hello</div>;
+    var columnsName = [];
+    var result = [];
 
-    // var columnsName = [];
-    // var result = [];
-    // visData.columns.forEach(column => {
-    //   columnsName.push(column["name"]);
-    // });
-    // visData.rows.forEach(row => {
-    //   var tempObj = {};
-    //   visData.columns.forEach((column, i) => {
-    //     tempObj[columnsName[i]] = row[column["id"]];
-    //   });
-    //   result.push(tempObj);
-    // });
-    // return this._updateUI(result);
+    visData.columns.forEach(column => {
+      columnsName.push(column["name"]);
+    });
+
+    visData.rows.forEach(row => {
+      var tempObj = {};
+      visData.columns.forEach((column, i) => {
+        tempObj[columnsName[i]] = row[column["id"]];
+      });
+      result.push(tempObj);
+    });
+
+    return this._updateUI(result);
   }
 
   async _updateUI(result) {
