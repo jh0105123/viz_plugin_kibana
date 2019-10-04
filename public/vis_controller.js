@@ -44,24 +44,16 @@ export class VisController {
       result.push(tempObj);
     });
 
-    $("#output").pivotUI(result, {
+    return this._updateUI(result);
+  }
+
+  async _updateUI(result) {
+    $(".output").pivotUI(result, {
       // rows: ["TEAM"],
       // vals: ["시간"],
       // aggregatorName: "Sum"
     });
-
-    return new Promise(resolve => {
-      resolve("when done rendering");
-    });
   }
-
-  // async _updateUI(result) {
-  //   $("#output").pivotUI(result, {
-  //     // rows: ["TEAM"],
-  //     // vals: ["시간"],
-  //     // aggregatorName: "Sum"
-  //   });
-  // }
 
   destroy() {
     this.el.innerHTML = "";
