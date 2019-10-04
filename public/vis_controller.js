@@ -21,7 +21,6 @@ export class VisController {
 
     this.pivottableVis = document.createElement("div");
     this.pivottableVis.className = "output";
-    //this.container.style.cssText = "overflow: auto;";
     this.container.appendChild(this.pivottableVis);
   }
 
@@ -34,8 +33,16 @@ export class VisController {
     var columnsName = [];
     var result = [];
 
+    this.metericType = "";
+    this.metericParam = "";
+
     visData.columns.forEach(column => {
       columnsName.push(column["name"]);
+
+      const opts = column.aggConfig._opts;
+      if (opts.schema == "Metric") {
+        this.metericType = opts.type;
+      }
     });
 
     visData.rows.forEach(row => {
@@ -52,8 +59,8 @@ export class VisController {
   async _updateUI(result) {
     $(".output").pivotUI(result, {
       // rows: ["TEAM"],
-      // vals: ["시간"],
-      // aggregatorName: "Sum"
+      //vals: ["시간"],
+      aggregatorName: this.metericType
     });
   }
 
