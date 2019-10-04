@@ -16,7 +16,7 @@ export class VisController {
 
     this.container = document.createElement("div");
     this.container.className = "myvis-container-div";
-    this.container.style.cssText = "overflow: scroll;";
+    this.container.style.cssText = "overflow: auto;";
     this.el.appendChild(this.container);
 
     this.pivottableVis = document.createElement("div");
