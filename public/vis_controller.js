@@ -19,7 +19,7 @@ export class VisController {
     this.el.appendChild(this.container);
 
     this.pivottableVis = document.createElement("div");
-    this.pivottableVis.className = output;
+    this.pivottableVis.className = "output";
     this.container.appendChild(this.pivottableVis);
   }
 
