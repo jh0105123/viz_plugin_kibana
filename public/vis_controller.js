@@ -17,6 +17,8 @@ export class VisController {
     this.container = document.createElement("div");
     this.container.className = "myvis-container-div";
     this.el.appendChild(this.container);
+
+    const state = vis.getState();
   }
 
   // 변화 감지 이벤트 받는 곳
@@ -24,7 +26,7 @@ export class VisController {
   // html 형식의 문자열을 반환하지 않고 뷰가 어떻게 생겼고 어떻게 작동하는지에 대한 정보
 
   //default response handler
-  render(visData, status) {
+  async render(visData, status) {
     var columnsName = [];
     var result = [];
 
