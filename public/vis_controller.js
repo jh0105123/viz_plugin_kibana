@@ -33,15 +33,12 @@ export class VisController {
     var columnsName = [];
     var result = [];
 
-    metericType = String(null);
-    metericParam = String(null);
-
     visData.columns.forEach(column => {
       columnsName.push(column["name"]);
 
       const opts = column.aggConfig._opts;
       if (opts.schema == "Metric") {
-        this.metericType = opts.type;
+        metericType = opts.type;
       }
     });
 
@@ -60,7 +57,7 @@ export class VisController {
     $(".output").pivotUI(result, {
       // rows: ["TEAM"],
       //vals: ["시간"],
-      aggregatorName: this.metericType
+      aggregatorName: metericType
     });
   }
 
