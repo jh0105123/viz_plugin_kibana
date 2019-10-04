@@ -22,9 +22,6 @@ export class VisController {
     this.pivottableVis = document.createElement("div");
     this.pivottableVis.className = "output";
     this.container.appendChild(this.pivottableVis);
-
-    this.metericType = "";
-    this.metericParam = "";
   }
 
   // 변화 감지 이벤트 받는 곳
@@ -35,6 +32,9 @@ export class VisController {
   async render(visData, status) {
     var columnsName = [];
     var result = [];
+
+    metericType = "";
+    metericParam = "";
 
     visData.columns.forEach(column => {
       columnsName.push(column["name"]);
