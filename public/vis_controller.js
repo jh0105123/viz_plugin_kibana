@@ -33,8 +33,8 @@ export class VisController {
     var columnsName = [];
     var result = [];
 
-    metericType = "";
-    metericParam = "";
+    metericType = String(null);
+    metericParam = String(null);
 
     visData.columns.forEach(column => {
       columnsName.push(column["name"]);
