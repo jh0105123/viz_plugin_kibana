@@ -29,22 +29,21 @@ export class VisController {
 
   //default response handler
   async render(visData, status) {
-    var columnsName = [];
-    var result = [];
+    return <div>hello</div>;
 
-    visData.columns.forEach(column => {
-      columnsName.push(column["name"]);
-    });
-
-    visData.rows.forEach(row => {
-      var tempObj = {};
-      visData.columns.forEach((column, i) => {
-        tempObj[columnsName[i]] = row[column["id"]];
-      });
-      result.push(tempObj);
-    });
-
-    return this._updateUI(result);
+    // var columnsName = [];
+    // var result = [];
+    // visData.columns.forEach(column => {
+    //   columnsName.push(column["name"]);
+    // });
+    // visData.rows.forEach(row => {
+    //   var tempObj = {};
+    //   visData.columns.forEach((column, i) => {
+    //     tempObj[columnsName[i]] = row[column["id"]];
+    //   });
+    //   result.push(tempObj);
+    // });
+    // return this._updateUI(result);
   }
 
   async _updateUI(result) {
