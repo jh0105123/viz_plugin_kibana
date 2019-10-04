@@ -20,6 +20,8 @@ export class VisController {
 
     this.pivottableVis = document.createElement("div");
     this.pivottableVis.className = "output";
+    var st = this.pivottableVis.getElementsByTagName("style")[0];
+    st.innerHTML = "overflow:hidden";
     this.container.appendChild(this.pivottableVis);
   }
 
@@ -53,8 +55,6 @@ export class VisController {
       // vals: ["시간"],
       // aggregatorName: "Sum"
     });
-
-    await Promise.all(result);
   }
 
   destroy() {
