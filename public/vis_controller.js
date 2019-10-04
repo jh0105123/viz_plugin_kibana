@@ -37,7 +37,7 @@ export class VisController {
       columnsName.push(column["name"]);
 
       const opts = column.aggConfig._opts;
-      if (opts.schema == "Metric") {
+      if (opts.schema == "metric") {
         metericType = opts.type;
       }
     });
