@@ -59,7 +59,7 @@ export class VisController {
     $(".output").pivotUI(result, {
       // rows: ["TEAM"],
       //vals: ["시간"],
-      aggregatorName: metericType
+      //aggregatorName: metericType
     });
   }
 
