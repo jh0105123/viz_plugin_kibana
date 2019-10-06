@@ -14,6 +14,8 @@ export class VisController {
     this.vis = vis;
     this.el = el;
 
+    var metericType = String(null);
+
     this.container = document.createElement("div");
     this.container.className = "myvis-container-div";
     this.container.style.cssText = "overflow: auto; width:100%;";
@@ -32,8 +34,6 @@ export class VisController {
   async render(visData, status) {
     var columnsName = [];
     var result = [];
-
-    var metericType = String(null);
 
     visData.columns.forEach(column => {
       columnsName.push(column["name"]);
