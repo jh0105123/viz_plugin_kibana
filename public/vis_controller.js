@@ -52,10 +52,10 @@ export class VisController {
       result.push(tempObj);
     });
 
-    return this._updateUI(result, metericType);
+    return this._updateUI(result);
   }
 
-  async _updateUI(result, metericType) {
+  async _updateUI(result) {
     $(".output").remove();
     this.pivottableVis = document.createElement("div");
     this.pivottableVis.className = "output";
