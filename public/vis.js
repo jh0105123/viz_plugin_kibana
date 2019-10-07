@@ -8,27 +8,6 @@ import { VisController } from "./vis_controller";
 
 const MyNewVisType = Private => {
   const VisFactory = Private(VisFactoryProvider);
-  const availableAggregatorOptions = [
-    "Count",
-    "Count Unique Values",
-    "List Unique Values",
-    "Sum",
-    "Integer Sum",
-    "Average",
-    "Minimum",
-    "Maximum",
-    "First",
-    "Last",
-    "Sum over Sum",
-    "80% Upper Bound",
-    "80% Lower Bound",
-    "Sum as Fraction of Total",
-    "Sum as Fraction of Rows",
-    "Sum as Fraction of Columns",
-    "Count as Fraction of Total",
-    "Count as Fraction of Rows",
-    "Count as Fraction of Columns"
-  ];
 
   return VisFactory.createBaseVisualization({
     name: "pivot_table",
@@ -45,7 +24,28 @@ const MyNewVisType = Private => {
           cols: "",
           aggregatorName: "Count",
           vals: ""
-        }
+        },
+        availableAggregatorOptions: [
+          "Count",
+          "Count Unique Values",
+          "List Unique Values",
+          "Sum",
+          "Integer Sum",
+          "Average",
+          "Minimum",
+          "Maximum",
+          "First",
+          "Last",
+          "Sum over Sum",
+          "80% Upper Bound",
+          "80% Lower Bound",
+          "Sum as Fraction of Total",
+          "Sum as Fraction of Rows",
+          "Sum as Fraction of Columns",
+          "Count as Fraction of Total",
+          "Count as Fraction of Rows",
+          "Count as Fraction of Columns"
+        ]
       }
     },
     editorConfig: {
@@ -56,7 +56,8 @@ const MyNewVisType = Private => {
           name: "metric",
           title: "Metric",
           min: 1,
-          aggFilter: availableAggregatorOptions,
+          aggFilter: ["!derivative", "!geo_centroid"],
+          //aggFilter: ["count", "avg", "sum", "min", "max", "cardinality"],
           defaults: [{ type: "count", schema: "metric" }]
         },
         {
