@@ -6,6 +6,23 @@
     ></div>
   </div>
   <div class="visEditorSidebar__formRow">
+    <label
+      class="visEditorSidebar__formLabel"
+      for="editMode"
+      i18n-id="kbnVislibVisTypes.editors.heatmap.showTooltipsLabel"
+      i18n-default-message="Edit Mode"
+    ></label>
+    <div class="visEditorSidebar__formControl">
+      <input
+        class="kuiCheckBox"
+        id="editMode"
+        type="checkbox"
+        ng-model="vis.params.editMode"
+      />
+    </div>
+  </div>
+
+  <!-- <div class="visEditorSidebar__formRow">
     <div class="euiCheckbox euiCheckboxGroup__item">
       <input
         type="checkbox"
@@ -18,5 +35,5 @@
       <div class="euiCheckbox__square"></div>
       <label class="euiCheckbox__label" for="editMode">Edit Mode</label>
     </div>
-  </div>
+  </div> -->
 </div>
