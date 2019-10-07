@@ -29,8 +29,17 @@ const MyNewVisType = Private => {
           name: "metric",
           title: "Metric",
           min: 1,
-          //aggFilter: ["!derivative", "!geo_centroid"],
-          aggFilter: ["count", "avg", "sum", "min", "max", "cardinality"],
+          aggFilter: [
+            "count",
+            "avg",
+            "sum",
+            "min",
+            "max",
+            "median",
+            "std_dev",
+            "sum_of_squares",
+            "variance"
+          ],
           defaults: [{ type: "count", schema: "metric" }]
         },
         {
@@ -46,7 +55,4 @@ const MyNewVisType = Private => {
   });
 };
 
-// register the provider with the visTypes registry
 VisTypesRegistryProvider.register(MyNewVisType);
-
-//export default TestVisProvider;
