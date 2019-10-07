@@ -18,11 +18,10 @@ const MyNewVisType = Private => {
     visConfig: {
       defaults: {
         editMode: true
-      },
-      editor: optionsTemplate
+      }
     },
     editorConfig: {
-      // optionsTemplate: optionsTemplate,
+      optionsTemplate: optionsTemplate,
       schemas: new Schemas([
         {
           group: "metrics",
