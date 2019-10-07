@@ -53,8 +53,10 @@ export class VisController {
     this.container.appendChild(this.pivottableVis);
 
     if (this.vis.params.editMode)
-      return this.renderPivotUITable(result, metericType, valsType);
-    else return this.renderPivotTable(result, metericType, valsType);
+      this.renderPivotUITable(result, metericType, valsType);
+    else this.renderPivotTable(result, metericType, valsType);
+
+    await Promise.all(renderArray);
   }
 
   async renderPivotTable(result, metericType, valsType) {
