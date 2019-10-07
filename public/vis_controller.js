@@ -34,19 +34,20 @@ export class VisController {
 
       const aggConfig = column.aggConfig.__type;
       if (aggConfig.type == "metrics") {
-        aggConfig.title == "Max"
-          ? (aggConfig.title = "Maximum")
-          : aggConfig.title;
-
-        aggConfig.title == "Min"
-          ? (aggConfig.title = "Minimum")
-          : aggConfig.title;
-
-        aggConfig.title == "Standard Deviation"
-          ? (aggConfig.title = "Sample Standard Deviation")
-          : aggConfig.title;
-
         metericType = aggConfig.title;
+
+        metericType == "Max"
+          ? (metericType = "Maximum")
+          : (metericType = aggConfig.title);
+
+        metericType == "Min"
+          ? (metericType = "Minimum")
+          : (metericType = aggConfig.title);
+
+        metericType == "Standard Deviation"
+          ? (metericType = "Sample Standard Deviation")
+          : (metericType = aggConfig.title);
+
         valsType.push(column["name"]);
       }
     });
