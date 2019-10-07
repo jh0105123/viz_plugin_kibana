@@ -18,6 +18,7 @@ const MyNewVisType = Private => {
     visConfig: {
       defaults: {
         editMode: false
+      }
     },
     editorConfig: {
       optionsTemplate: optionsTemplate,
