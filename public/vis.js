@@ -17,36 +17,7 @@ const MyNewVisType = Private => {
     visualization: VisController,
     visConfig: {
       defaults: {
-        // add default parameters
-        fontSize: "30",
-        config: {
-          rows: "",
-          cols: "",
-          aggregatorName: "Count",
-          vals: ""
-        },
-        availableAggregatorOptions: [
-          "Count",
-          "Count Unique Values",
-          "List Unique Values",
-          "Sum",
-          "Integer Sum",
-          "Average",
-          "Minimum",
-          "Maximum",
-          "First",
-          "Last",
-          "Sum over Sum",
-          "80% Upper Bound",
-          "80% Lower Bound",
-          "Sum as Fraction of Total",
-          "Sum as Fraction of Rows",
-          "Sum as Fraction of Columns",
-          "Count as Fraction of Total",
-          "Count as Fraction of Rows",
-          "Count as Fraction of Columns"
-        ]
-      }
+        editMode: false
     },
     editorConfig: {
       optionsTemplate: optionsTemplate,
