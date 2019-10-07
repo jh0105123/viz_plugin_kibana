@@ -56,7 +56,7 @@ export class VisController {
       this.renderPivotUITable(result, metericType, valsType);
     else this.renderPivotTable(result, metericType, valsType);
 
-    await Promise.all(renderArray);
+    return Promise.all(result);
   }
 
   async renderPivotTable(result, metericType, valsType) {
