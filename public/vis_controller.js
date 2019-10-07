@@ -36,17 +36,13 @@ export class VisController {
       if (aggConfig.type == "metrics") {
         metericType = aggConfig.title;
 
-        metericType == "Max"
-          ? (metericType = "Maximum")
-          : (metericType = aggConfig.title);
+        metericType == "Max" ? (metericType = "Maximum") : metericType;
 
-        metericType == "Min"
-          ? (metericType = "Minimum")
-          : (metericType = aggConfig.title);
+        metericType == "Min" ? (metericType = "Minimum") : metericType;
 
         metericType == "Standard Deviation"
           ? (metericType = "Sample Standard Deviation")
-          : (metericType = aggConfig.title);
+          : metericType;
 
         valsType.push(column["name"]);
       }
