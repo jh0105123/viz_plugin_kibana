@@ -29,7 +29,7 @@ export class VisController {
   // html 형식의 문자열을 반환하지 않고 뷰가 어떻게 생겼고 어떻게 작동하는지에 대한 정보
 
   //default response handler
-  render(visData, status) {
+  async render(visData, status) {
     var columnsName = [];
     var result = [];
 
@@ -55,7 +55,8 @@ export class VisController {
     return this._updateUI(result, metericType);
   }
 
-  _updateUI(result, metericType) {
+  async _updateUI(result, metericType) {
+    $(".output").empty();
     $(".output").pivotUI(result, {
       // rows: ["TEAM"],
       //vals: ["시간"],
