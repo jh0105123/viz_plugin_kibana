@@ -38,9 +38,9 @@ export class VisController {
     visData.columns.forEach(column => {
       columnsName.push(column["name"]);
 
-      const opts = column.aggConfig._opts;
-      if (opts.schema == "metric") {
-        metericType = opts.type;
+      const aggConfig = column.aggConfig.__type;
+      if (aggConfig.type == "metrics") {
+        metericType = aggConfig.title;
       }
     });
 
