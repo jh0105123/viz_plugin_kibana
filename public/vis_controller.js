@@ -1,11 +1,9 @@
 // node_module import
-import React from "react";
 import jQuery from "jquery";
 import "jqueryui";
 import "pivottable";
 
 import "pivottable/dist/pivottable.css";
-import customData from "./data.json";
 
 window.$ = window.jQuery = jQuery;
 
@@ -24,11 +22,6 @@ export class VisController {
     this.container.appendChild(this.pivottableVis);
   }
 
-  // 변화 감지 이벤트 받는 곳
-  // 컴포넌스가 어떻게 생겼는지 정의하는 역할
-  // html 형식의 문자열을 반환하지 않고 뷰가 어떻게 생겼고 어떻게 작동하는지에 대한 정보
-
-  //default response handler
   async render(visData, status) {
     var columnsName = [];
     var result = [];
@@ -54,15 +47,24 @@ export class VisController {
       result.push(tempObj);
     });
 
-    return this._updateUI(result, metericType, valsType);
-  }
-
-  async _updateUI(result, metericType, valsType) {
     $(".output").remove();
     this.pivottableVis = document.createElement("div");
     this.pivottableVis.className = "output";
     this.container.appendChild(this.pivottableVis);
 
+    if (this.vis.params.editMode)
+      return this.renderPivotUITable(result, metericType, valsType);
+    else return this.renderPivotTable(result, metericType, valsType);
+  }
+
+  async renderPivotTable(result, metericType, valsType) {
+    $(".output").pivot(result, {
+      vals: valsType,
+      aggregatorName: metericType
+    });
+  }
+
+  async renderPivotUITable(result, metericType, valsType) {
     $(".output").pivotUI(result, {
       vals: valsType,
       aggregatorName: metericType
