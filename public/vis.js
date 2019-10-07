@@ -23,7 +23,6 @@ const MyNewVisType = Private => {
     editorConfig: {
       optionsTemplate: optionsTemplate,
       enableAutoApply: true,
-      enableApplyChanges: true,
       schemas: new Schemas([
         {
           group: "metrics",
