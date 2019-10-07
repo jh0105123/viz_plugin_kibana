@@ -2,11 +2,13 @@
   <div class="euiCheckbox euiCheckboxGroup__item">
     <input
       type="checkbox"
+      value="{{ isEditMode }}"
       class="euiCheckbox__input"
-      id="tbb4aqk2"
+      id="isEditMode"
       ng-model="vis.params.editMode"
+      ng-checked="vis.params.editMode"
     />
     <div class="euiCheckbox__square"></div>
-    <label class="euiCheckbox__label" for="tbb4aqk2">Edit Mode</label>
+    <label class="euiCheckbox__label" for="isEditMode">Edit Mode</label>
   </div>
 </div>
