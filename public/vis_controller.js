@@ -34,6 +34,7 @@ export class VisController {
     var result = [];
 
     var metericType = String(null);
+    var valsType = String(null);
 
     visData.columns.forEach(column => {
       columnsName.push(column["name"]);
@@ -41,6 +42,7 @@ export class VisController {
       const aggConfig = column.aggConfig.__type;
       if (aggConfig.type == "metrics") {
         metericType = aggConfig.title;
+        valsType = column.name;
       }
     });
 
@@ -52,10 +54,10 @@ export class VisController {
       result.push(tempObj);
     });
 
-    return this._updateUI(result, metericType);
+    return this._updateUI(result, metericType, valsType);
   }
 
-  async _updateUI(result, metericType) {
+  async _updateUI(result, metericType, valsType) {
     $(".output").remove();
     this.pivottableVis = document.createElement("div");
     this.pivottableVis.className = "output";
@@ -63,7 +65,7 @@ export class VisController {
 
     $(".output").pivotUI(result, {
       // rows: ["TEAM"],
-      vals: ["시간"],
+      vals: [{ valsType }],
       aggregatorName: metericType
     });
   }
