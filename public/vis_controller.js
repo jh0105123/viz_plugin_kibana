@@ -52,14 +52,14 @@ export class VisController {
       result.push(tempObj);
     });
 
-    return this._updateUI(result);
+    return this._updateUI(result, metericType);
   }
 
-  async _updateUI(result) {
+  async _updateUI(result, metericType) {
     $(".output").pivotUI(result, {
       // rows: ["TEAM"],
       //vals: ["시간"],
-      //aggregatorName: metericType
+      aggregatorName: metericType
     });
   }
 
