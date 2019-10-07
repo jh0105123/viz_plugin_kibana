@@ -56,7 +56,11 @@ export class VisController {
   }
 
   async _updateUI(result, metericType) {
-    $(".output").empty();
+    $(".output").remove();
+    this.pivottableVis = document.createElement("div");
+    this.pivottableVis.className = "output";
+    this.container.appendChild(this.pivottableVis);
+
     $(".output").pivotUI(result, {
       // rows: ["TEAM"],
       //vals: ["시간"],
