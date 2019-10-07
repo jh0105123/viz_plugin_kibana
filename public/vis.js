@@ -36,9 +36,9 @@ const MyNewVisType = Private => {
             "min",
             "max",
             "median",
-            "std_dev",
-            "sum_of_squares",
-            "variance"
+            "std_dev"
+            //"sum_of_squares",
+            //"variance"
           ],
           defaults: [{ type: "count", schema: "metric" }]
         },
