@@ -42,7 +42,7 @@ export class VisController {
       const aggConfig = column.aggConfig.__type;
       if (aggConfig.type == "metrics") {
         metericType = aggConfig.title;
-        valsType.push(column.name);
+        valsType.push(column["name"]);
       }
     });
 
