@@ -23,7 +23,7 @@ export class VisController {
     this.pivottableVis.className = "output";
     this.container.appendChild(this.pivottableVis);
 
-    const metericType = String(null);
+    let metericType = String(null);
   }
 
   // 변화 감지 이벤트 받는 곳
