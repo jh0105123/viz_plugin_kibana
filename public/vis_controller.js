@@ -64,7 +64,6 @@ export class VisController {
     this.container.appendChild(this.pivottableVis);
 
     $(".output").pivotUI(result, {
-      // rows: ["TEAM"],
       vals: valsType,
       aggregatorName: metericType
     });

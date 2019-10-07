@@ -57,7 +57,7 @@ const MyNewVisType = Private => {
           title: "Metric",
           min: 1,
           //aggFilter: ['!derivative', '!geo_centroid'],
-          aggFilter: ["count", "avg", "sum", "min", "max", "cardinality"],
+          // aggFilter: ["count", "avg", "sum", "min", "max", "cardinality"],
           defaults: [{ type: "count", schema: "metric" }]
         },
         {
