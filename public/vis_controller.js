@@ -49,7 +49,8 @@ export class VisController {
     visData.rows.forEach(row => {
       var tempObj = {};
       visData.columns.forEach((column, i) => {
-        tempObj[columnsName[i]] = row[column["id"]];
+        if (column.aggConfig.__type.type != "metrics")
+          tempObj[columnsName[i]] = row[column["id"]];
       });
       result.push(tempObj);
     });
