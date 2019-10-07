@@ -9,6 +9,8 @@ window.$ = window.jQuery = jQuery;
 
 export class VisController {
   constructor(el, vis) {
+    super(container, vis);
+
     this.vis = vis;
     this.el = el;
 
