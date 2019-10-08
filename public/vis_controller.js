@@ -83,11 +83,11 @@ export class VisController {
       // rows: $scope.table.config.rows,
       vals: valsType,
       aggregatorName: metericType,
-      rendererName: "Bar Chart",
       renderers: $.extend(
         $.pivotUtilities.renderers,
         $.pivotUtilities.plotly_renderers
       ),
+      rendererName: "Bar Chart",
       onRefresh: function(config) {
         this.config = config;
       }
