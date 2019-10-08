@@ -77,7 +77,7 @@ export class VisController {
     $(".output").pivotUI(result, {
       renderers: $.extend(
         $.pivotUtilities.renderers,
-        $.pivotUtilities.c3_renderers
+        $.pivotUtilities.plotly_renderers
       ),
       // cols: $scope.table.config.cols,
       // rows: $scope.table.config.rows,
