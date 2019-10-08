@@ -57,10 +57,10 @@ export class VisController {
       result.push(tempObj);
     });
 
-    $(".output").remove();
-    this.pivottableVis = document.createElement("div");
-    this.pivottableVis.className = "output";
-    this.container.appendChild(this.pivottableVis);
+    // $(".output").remove();
+    // this.pivottableVis = document.createElement("div");
+    // this.pivottableVis.className = "output";
+    // this.container.appendChild(this.pivottableVis);
 
     if (this.vis.params.editMode)
       return this.renderPivotUITable(result, metericType, valsType);
