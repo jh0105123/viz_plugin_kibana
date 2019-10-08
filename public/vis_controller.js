@@ -79,7 +79,10 @@ export class VisController {
       // rows: $scope.table.config.rows,
       vals: valsType,
       aggregatorName: metericType,
-      onRefresh: function() {}
+      renderers: $.extend(
+        $.pivotUtilities.renderers,
+        $.pivotUtilities.c3_renderers
+      )
     });
   }
 
