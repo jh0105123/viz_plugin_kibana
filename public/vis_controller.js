@@ -4,9 +4,11 @@ import "jqueryui";
 import "pivottable";
 
 import "pivottable/dist/pivottable.css";
-import "https://cdn.plot.ly/plotly-basic-latest.min.js";
 
 window.$ = window.jQuery = jQuery;
+$("head").append(
+  "<script src='https://cdn.plot.ly/plotly-basic-latest.min.js'></script>"
+);
 
 export class VisController {
   constructor(el, vis) {
