@@ -75,15 +75,15 @@ export class VisController {
   }
 
   async renderPivotUITable(result, metericType, valsType) {
-    if(this.config.rendererName==undefined)
-    this.config.rendererName="table";
+    if (this.config.rendererName == undefined)
+      this.config.rendererName = "table";
 
     $(".output").pivotUI(result, {
       // cols: $scope.table.config.cols,
       // rows: $scope.table.config.rows,
       vals: valsType,
       aggregatorName: metericType,
-      rendererName=this.config.rendererName,
+      rendererName: "Bar Chart",
       renderers: $.extend(
         $.pivotUtilities.renderers,
         $.pivotUtilities.plotly_renderers
