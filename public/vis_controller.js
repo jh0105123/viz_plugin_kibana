@@ -4,6 +4,7 @@ import "jqueryui";
 import "pivottable";
 
 import "pivottable/dist/pivottable.css";
+import "pivottable/dist/d3_renderers.js";
 import "pivottable/dist/c3_renderers.js";
 
 window.$ = window.jQuery = jQuery;
