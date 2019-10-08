@@ -80,12 +80,13 @@ export class VisController {
       // rows: $scope.table.config.rows,
       vals: valsType,
       aggregatorName: metericType,
+      rendererName=this.config.rendererName,
       renderers: $.extend(
         $.pivotUtilities.renderers,
         $.pivotUtilities.plotly_renderers
       ),
       onRefresh: function(config) {
-        var temp = config;
+        this.config = config;
       }
     });
   }
