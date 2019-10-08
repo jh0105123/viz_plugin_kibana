@@ -3,9 +3,9 @@ import jQuery from "jquery";
 import "jqueryui";
 import "pivottable";
 
-import "pivottable/dist/pivottable.css";
-import "pivottable/dist/d3_renderers.js";
-import "pivottable/dist/c3_renderers.js";
+// import "pivottable/dist/pivottable.css";
+// import "pivottable/dist/d3_renderers.js";
+// import "pivottable/dist/c3_renderers.js";
 
 window.$ = window.jQuery = jQuery;
 
@@ -80,11 +80,11 @@ export class VisController {
       // cols: $scope.table.config.cols,
       // rows: $scope.table.config.rows,
       vals: valsType,
-      aggregatorName: metericType,
-      renderers: $.extend(
-        $.pivotUtilities.renderers,
-        $.pivotUtilities.c3_renderers
-      )
+      aggregatorName: metericType
+      // renderers: $.extend(
+      //   $.pivotUtilities.renderers,
+      //   $.pivotUtilities.c3_renderers
+      // )
     });
   }
 
