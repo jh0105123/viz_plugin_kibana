@@ -2,7 +2,7 @@
 import jQuery from "jquery";
 import "jqueryui";
 import "pivottable";
-import "plotly.js-dist";
+import "plotly.js-dist/plotly.js";
 
 import "pivottable/dist/pivottable.css";
 import "pivottable/dist/plotly_renderers.js";
