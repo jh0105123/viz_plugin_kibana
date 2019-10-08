@@ -4,6 +4,7 @@ import "jqueryui";
 import "pivottable";
 
 import "pivottable/dist/pivottable.css";
+import "https://cdn.plot.ly/plotly-basic-latest.min.js";
 
 window.$ = window.jQuery = jQuery;
 
@@ -81,7 +82,7 @@ export class VisController {
       aggregatorName: metericType,
       renderers: $.extend(
         $.pivotUtilities.renderers,
-        $.pivotUtilities.c3_renderers
+        $.pivotUtilities.plotly_renderers
       )
     });
   }
