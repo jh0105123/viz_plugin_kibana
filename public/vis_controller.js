@@ -84,7 +84,9 @@ export class VisController {
         $.pivotUtilities.renderers,
         $.pivotUtilities.plotly_renderers
       ),
-      onRefresh: function(config) {}
+      onRefresh: function(config) {
+        var temp = config;
+      }
     });
   }
 
