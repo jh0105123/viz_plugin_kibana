@@ -3,7 +3,8 @@ import jQuery from "jquery";
 import "jqueryui";
 import "pivottable";
 
-import "pivottable/dist/";
+import "pivottable/dist/pivottable.css";
+import "pivottable/dist/c3_renderers.js";
 
 window.$ = window.jQuery = jQuery;
 
