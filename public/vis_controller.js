@@ -74,20 +74,15 @@ export class VisController {
   }
 
   async renderPivotUITable(result, metericType, valsType) {
-    var renderers = {};
-    $.extend(
-      renderers,
-      $.pivotUtilities.renderers,
-      $.pivotUtilities.c3_renderers,
-      $.pivotUtilities.subtotal_renderers
-    );
-
     $(".output").pivotUI(result, {
-      renderers: renderers,
       // cols: $scope.table.config.cols,
       // rows: $scope.table.config.rows,
       vals: valsType,
-      aggregatorName: metericType
+      aggregatorName: metericType,
+      renderers: $.extend(
+        $.pivotUtilities.renderers,
+        $.pivotUtilities.c3_renderers
+      )
     });
   }
 
