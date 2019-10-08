@@ -75,14 +75,14 @@ export class VisController {
 
   async renderPivotUITable(result, metericType, valsType) {
     $(".output").pivotUI(result, {
-      // cols: $scope.table.config.cols,
-      // rows: $scope.table.config.rows,
-      vals: valsType,
-      aggregatorName: metericType,
       renderers: $.extend(
         $.pivotUtilities.renderers,
         $.pivotUtilities.c3_renderers
-      )
+      ),
+      // cols: $scope.table.config.cols,
+      // rows: $scope.table.config.rows,
+      vals: valsType,
+      aggregatorName: metericType
     });
   }
 
