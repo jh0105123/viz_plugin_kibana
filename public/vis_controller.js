@@ -87,7 +87,7 @@ export class VisController {
         $.pivotUtilities.renderers,
         $.pivotUtilities.plotly_renderers
       ),
-      rendererName: "Bar Chart",
+      //rendererName: "Bar Chart",
       onRefresh: function(config) {
         this.config = config;
       }
