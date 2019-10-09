@@ -75,8 +75,8 @@ export class VisController {
   }
 
   async renderPivotUITable(result, metericType, valsType) {
-    if (this.config.rendererName == undefined)
-      this.config.rendererName = "table";
+    // if (this.config.rendererName == undefined)
+    //   this.config.rendererName = "table";
 
     $(".output").pivotUI(result, {
       // cols: $scope.table.config.cols,
