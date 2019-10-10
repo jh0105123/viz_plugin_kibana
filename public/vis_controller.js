@@ -76,7 +76,7 @@ export class VisController {
   }
 
   async renderPivotUITable(result, metericType, valsType) {
-    alert(this.test);
+    alert(this.vis);
 
     $(".output").pivotUI(result, {
       // cols: $scope.table.config.cols,
@@ -98,7 +98,7 @@ export class VisController {
         delete config_copy["rendererOptions"];
         delete config_copy["localeStrings"];
 
-        this.test = config_copy;
+        this.vis = config_copy;
       }
     });
   }
