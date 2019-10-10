@@ -73,10 +73,22 @@ export class VisController {
   }
 
   async renderPivotTable(result, metericType, valsType) {
-    $(".output").pivot(result, {
-      vals: valsType,
-      aggregatorName: metericType
-    });
+    $(".output").pivot(
+      result,
+      {
+        cols: globals.cols,
+        rows: globals.rows,
+        rendererName: globals.rendererName,
+        vals: valsType,
+        aggregatorName: metericType,
+        onRefresh: function(config) {
+          globals.rendererName = config.rendererName;
+          globals.rows = config.rows;
+          globals.cols = config.cols;
+        }
+      },
+      true
+    );
   }
 
   async renderPivotUITable(result, metericType, valsType) {
