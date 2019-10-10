@@ -107,7 +107,7 @@ export class VisController {
         onRefresh: function(config) {
           globals.rendererName =
             config.rendererName == undefined
-              ? (config.rendererName = "table")
+              ? (config.rendererName = "Table")
               : config.rendererName;
           globals.rows = config.rows;
           globals.cols = config.cols;
