@@ -85,14 +85,10 @@ export class VisController {
     $(".output").pivotUI(
       result,
       {
-        // onRefresh: function(config) {
-        //   delete config["aggregators"];
-        //   delete config["renderers"];
-        // },
         // cols: $scope.table.config.cols,
         // rows: $scope.table.config.rows,
         vals: valsType,
-        aggregatorName: globals.metericType,
+        aggregatorName: metericType,
         renderers: $.extend(
           $.pivotUtilities.renderers,
           $.pivotUtilities.plotly_renderers
