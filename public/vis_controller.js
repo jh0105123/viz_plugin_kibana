@@ -74,6 +74,7 @@ export class VisController {
         cols: globals.cols,
         rows: globals.rows,
         vals: valsType,
+        aggregatorName: metericType,
         aggregator: $.pivotUtilities.aggregators[metericType](valsType),
         renderers: $.extend(
           $.pivotUtilities.renderers,
