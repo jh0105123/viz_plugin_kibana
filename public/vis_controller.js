@@ -85,10 +85,10 @@ export class VisController {
     $(".output").pivotUI(
       result,
       {
-        onRefresh: function(config) {
-          delete config["aggregators"];
-          delete config["renderers"];
-        },
+        // onRefresh: function(config) {
+        //   delete config["aggregators"];
+        //   delete config["renderers"];
+        // },
         // cols: $scope.table.config.cols,
         // rows: $scope.table.config.rows,
         vals: valsType,
@@ -97,7 +97,6 @@ export class VisController {
           $.pivotUtilities.renderers,
           $.pivotUtilities.plotly_renderers
         )
-        //rendererName: "Bar Chart",
       },
       true
     );
