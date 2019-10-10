@@ -7,7 +7,7 @@ import "pivottable/dist/pivottable.css";
 import "pivottable/dist/plotly_renderers.js";
 import "globals";
 export const globals = {
-  rendererName: String(null)
+  rendererName: "table"
 };
 
 window.$ = window.jQuery = jQuery;
