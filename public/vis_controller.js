@@ -73,13 +73,14 @@ export class VisController {
   }
 
   async renderPivotTable(result, metericType, valsType) {
+    var currentaAggregator = $.pivotUtilities.aggregators[metericType];
     $(".output").pivot(
       result,
       {
         cols: globals.cols,
         rows: globals.rows,
         vals: valsType,
-        aggregator: $.pivotUtilities.aggregators[metericType](valsType),
+        aggregator: currentaAggregator(vals),
         renderer: globals.rendererName,
         onRefresh: function(config) {
           globals.rendererName = config.rendererName;
