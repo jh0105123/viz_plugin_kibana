@@ -91,7 +91,7 @@ export class VisController {
       // cols: $scope.table.config.cols,
       // rows: $scope.table.config.rows,
       vals: valsType,
-      aggregatorName: metericType,
+      aggregatorName: globals.metericType,
       renderers: $.extend(
         $.pivotUtilities.renderers,
         $.pivotUtilities.plotly_renderers
