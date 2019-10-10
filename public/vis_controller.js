@@ -92,8 +92,8 @@ export class VisController {
       //rendererName: "Bar Chart",
       onRefresh: function(config) {
         var config_copy = JSON.parse(JSON.stringify(config));
-        delete config_copy["aggregatorName"];
-
+        //delete config_copy["aggregatorName"];
+        config["aggregatorName"] = metericType;
         globals.config = config_copy;
       }
     });
