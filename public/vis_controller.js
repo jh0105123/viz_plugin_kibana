@@ -35,7 +35,7 @@ export class VisController {
     var metericType = String(null);
     var valsType = [];
 
-    visData.columns.forEach(column => {
+    globals.config.columns.forEach(column => {
       columnsName.push(column["name"]);
 
       const aggConfig = column.aggConfig.__type;
@@ -54,18 +54,40 @@ export class VisController {
       }
     });
 
-    visData.rows.forEach(row => {
+    globals.config.rows.forEach(row => {
       var tempObj = {};
-      visData.columns.forEach((column, i) => {
+      globals.config.columns.forEach((column, i) => {
         tempObj[columnsName[i]] = row[column["id"]];
       });
       result.push(tempObj);
     });
 
-    // $(".output").remove();
-    // this.pivottableVis = document.createElement("div");
-    // this.pivottableVis.className = "output";
-    // this.container.appendChild(this.pivottableVis);
+    // visData.columns.forEach(column => {
+    //   columnsName.push(column["name"]);
+
+    //   const aggConfig = column.aggConfig.__type;
+    //   if (aggConfig.type == "metrics") {
+    //     metericType = aggConfig.title;
+
+    //     metericType == "Max" ? (metericType = "Maximum") : metericType;
+
+    //     metericType == "Min" ? (metericType = "Minimum") : metericType;
+
+    //     metericType == "Standard Deviation"
+    //       ? (metericType = "Sample Standard Deviation")
+    //       : metericType;
+
+    //     valsType.push(column["name"]);
+    //   }
+    // });
+
+    // visData.rows.forEach(row => {
+    //   var tempObj = {};
+    //   visData.columns.forEach((column, i) => {
+    //     tempObj[columnsName[i]] = row[column["id"]];
+    //   });
+    //   result.push(tempObj);
+    // });
 
     if (this.vis.params.editMode)
       return this.renderPivotUITable(result, metericType, valsType);
@@ -93,7 +115,6 @@ export class VisController {
       onRefresh: function(config) {
         var config_copy = JSON.parse(JSON.stringify(config));
         delete config_copy["aggregatorName"];
-        config_copy.aggregatorName = metericType;
         globals.config = config_copy;
       }
     });
