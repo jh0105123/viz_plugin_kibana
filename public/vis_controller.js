@@ -79,7 +79,7 @@ export class VisController {
   }
 
   async renderPivotUITable(result, metericType, valsType) {
-    alert(isDeployNeeded);
+    alert(globals.isDeployNeeded);
 
     $(".output").pivotUI(result, {
       // cols: $scope.table.config.cols,
