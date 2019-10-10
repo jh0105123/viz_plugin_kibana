@@ -79,9 +79,7 @@ export class VisController {
         cols: globals.cols,
         rows: globals.rows,
         vals: valsType,
-        aggregator: $.pivotUtilities.aggregators[globals.rendererName](
-          valsType
-        ),
+        aggregator: $.pivotUtilities.aggregators[metericType](valsType),
         renderer: globals.rendererName,
         onRefresh: function(config) {
           globals.rendererName = config.rendererName;
