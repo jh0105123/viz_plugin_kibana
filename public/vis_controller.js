@@ -78,9 +78,9 @@ export class VisController {
       {
         cols: globals.cols,
         rows: globals.rows,
-        rendererName: globals.rendererName,
         vals: valsType,
         aggregatorName: metericType,
+        renderer: globals.rendererName,
         onRefresh: function(config) {
           globals.rendererName = config.rendererName;
           globals.rows = config.rows;
