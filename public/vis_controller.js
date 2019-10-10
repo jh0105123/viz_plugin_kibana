@@ -9,7 +9,8 @@ import "globals";
 export const globals = {
   isContentLoading: false,
   isDeployNeeded: true,
-  config: JSON.stringify("")
+  config: JSON.stringify(""),
+  metericType = String(null)
 };
 
 window.$ = window.jQuery = jQuery;
@@ -50,6 +51,7 @@ export class VisController {
           ? (metericType = "Sample Standard Deviation")
           : metericType;
 
+        globals.metericType = metericType;
         valsType.push(column["name"]);
       }
     });
@@ -94,7 +96,7 @@ export class VisController {
         var config_copy = JSON.parse(JSON.stringify(config));
         //delete config_copy["aggregatorName"];
         config["aggregatorName"] = metericType;
-        globals.config = config_copy;
+        globals.config = globals.metericType;
       }
     });
   }
