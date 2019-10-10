@@ -62,11 +62,6 @@ export class VisController {
       result.push(tempObj);
     });
 
-    // $(".output").remove();
-    // this.pivottableVis = document.createElement("div");
-    // this.pivottableVis.className = "output";
-    // this.container.appendChild(this.pivottableVis);
-
     if (this.vis.params.editMode)
       return this.renderPivotUITable(result, metericType, valsType);
     else return this.renderPivotTable(result, metericType, valsType);
@@ -80,8 +75,13 @@ export class VisController {
         cols: globals.cols,
         rows: globals.rows,
         vals: valsType,
-        aggregator: currentaAggregator(vals),
-        renderer: globals.rendererName,
+        //aggregator: currentaAggregator(vals),
+        renderers: $.extend(
+          $.pivotUtilities.renderers,
+          $.pivotUtilities.plotly_renderers
+        ),
+        rendererName: globals.rendererName,
+        renderer: $.pivotUtilities.renderers[globals.rendererName],
         onRefresh: function(config) {
           globals.rendererName = config.rendererName;
           globals.rows = config.rows;
@@ -98,9 +98,9 @@ export class VisController {
       {
         cols: globals.cols,
         rows: globals.rows,
-        rendererName: globals.rendererName,
         vals: valsType,
         aggregatorName: metericType,
+        rendererName: globals.rendererName,
         renderers: $.extend(
           $.pivotUtilities.renderers,
           $.pivotUtilities.plotly_renderers
