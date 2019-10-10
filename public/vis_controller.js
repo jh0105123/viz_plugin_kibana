@@ -85,7 +85,10 @@ export class VisController {
       {
         cols: globals.cols,
         rows: globals.rows,
-        rendererName: globals.rendererName,
+        rendererName:
+          globals.rendererName == undefined
+            ? (globals.rendererName = "table")
+            : globals.rendererName,
         vals: valsType,
         aggregatorName: metericType,
         renderers: $.extend(
