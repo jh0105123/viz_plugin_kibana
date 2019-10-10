@@ -97,7 +97,10 @@ export class VisController {
       {
         cols: globals.cols,
         rows: globals.rows,
-        rendererName: globals.rendererName,
+        rendererName:
+          globals.rendererName == undefined
+            ? (globals.rendererName = "Table")
+            : globals.rendererName,
         vals: valsType,
         aggregatorName: metericType,
         renderers: $.extend(
@@ -105,10 +108,7 @@ export class VisController {
           $.pivotUtilities.plotly_renderers
         ),
         onRefresh: function(config) {
-          globals.rendererName =
-            config.rendererName == undefined
-              ? (config.rendererName = "Table")
-              : config.rendererName;
+          globals.rendererName = config.rendererName;
           globals.rows = config.rows;
           globals.cols = config.cols;
         }
