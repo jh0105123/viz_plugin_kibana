@@ -8,7 +8,8 @@ import "pivottable/dist/plotly_renderers.js";
 import "globals";
 export const globals = {
   isContentLoading: false,
-  isDeployNeeded: true
+  isDeployNeeded: true,
+  config: JSON.stringify("")
 };
 
 window.$ = window.jQuery = jQuery;
@@ -79,7 +80,7 @@ export class VisController {
   }
 
   async renderPivotUITable(result, metericType, valsType) {
-    alert(globals.isDeployNeeded);
+    alert(globals.config);
 
     $(".output").pivotUI(result, {
       // cols: $scope.table.config.cols,
@@ -101,7 +102,7 @@ export class VisController {
         delete config_copy["rendererOptions"];
         delete config_copy["localeStrings"];
 
-        this.vis = config_copy;
+        globals.config = config_copy;
       }
     });
   }
