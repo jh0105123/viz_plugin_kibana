@@ -82,21 +82,25 @@ export class VisController {
   }
 
   async renderPivotUITable(result, metericType, valsType) {
-    $(".output").pivotUI(result, {
-      onRefresh: function(config) {
-        //delete config["aggregatorName"];
-        //config["aggregatorName"] = globals.metericType;
+    $(".output").pivotUI(
+      result,
+      {
+        onRefresh: function(config) {
+          delete config["aggregators"];
+          delete config["renderers"];
+        },
+        // cols: $scope.table.config.cols,
+        // rows: $scope.table.config.rows,
+        vals: valsType,
+        aggregatorName: globals.metericType,
+        renderers: $.extend(
+          $.pivotUtilities.renderers,
+          $.pivotUtilities.plotly_renderers
+        )
+        //rendererName: "Bar Chart",
       },
-      // cols: $scope.table.config.cols,
-      // rows: $scope.table.config.rows,
-      vals: valsType,
-      aggregatorName: globals.metericType,
-      renderers: $.extend(
-        $.pivotUtilities.renderers,
-        $.pivotUtilities.plotly_renderers
-      )
-      //rendererName: "Bar Chart",
-    });
+      true
+    );
   }
 
   destroy() {
