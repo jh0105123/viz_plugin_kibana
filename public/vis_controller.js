@@ -35,7 +35,7 @@ export class VisController {
     var metericType = String(null);
     var valsType = [];
 
-    globals.config.columns.forEach(column => {
+    visData.columns.forEach(column => {
       columnsName.push(column["name"]);
 
       const aggConfig = column.aggConfig.__type;
@@ -54,40 +54,18 @@ export class VisController {
       }
     });
 
-    globals.config.rows.forEach(row => {
+    visData.rows.forEach(row => {
       var tempObj = {};
-      globals.config.columns.forEach((column, i) => {
+      visData.columns.forEach((column, i) => {
         tempObj[columnsName[i]] = row[column["id"]];
       });
       result.push(tempObj);
     });
 
-    // visData.columns.forEach(column => {
-    //   columnsName.push(column["name"]);
-
-    //   const aggConfig = column.aggConfig.__type;
-    //   if (aggConfig.type == "metrics") {
-    //     metericType = aggConfig.title;
-
-    //     metericType == "Max" ? (metericType = "Maximum") : metericType;
-
-    //     metericType == "Min" ? (metericType = "Minimum") : metericType;
-
-    //     metericType == "Standard Deviation"
-    //       ? (metericType = "Sample Standard Deviation")
-    //       : metericType;
-
-    //     valsType.push(column["name"]);
-    //   }
-    // });
-
-    // visData.rows.forEach(row => {
-    //   var tempObj = {};
-    //   visData.columns.forEach((column, i) => {
-    //     tempObj[columnsName[i]] = row[column["id"]];
-    //   });
-    //   result.push(tempObj);
-    // });
+    // $(".output").remove();
+    // this.pivottableVis = document.createElement("div");
+    // this.pivottableVis.className = "output";
+    // this.container.appendChild(this.pivottableVis);
 
     if (this.vis.params.editMode)
       return this.renderPivotUITable(result, metericType, valsType);
@@ -115,6 +93,7 @@ export class VisController {
       onRefresh: function(config) {
         var config_copy = JSON.parse(JSON.stringify(config));
         delete config_copy["aggregatorName"];
+
         globals.config = config_copy;
       }
     });
