@@ -57,10 +57,10 @@ export class VisController {
       result.push(tempObj);
     });
 
-    $(".output").remove();
-    this.pivottableVis = document.createElement("div");
-    this.pivottableVis.className = "output";
-    this.container.appendChild(this.pivottableVis);
+    // $(".output").remove();
+    // this.pivottableVis = document.createElement("div");
+    // this.pivottableVis.className = "output";
+    // this.container.appendChild(this.pivottableVis);
 
     if (this.vis.params.editMode)
       return this.renderPivotUITable(result, metericType, valsType);
@@ -75,9 +75,6 @@ export class VisController {
   }
 
   async renderPivotUITable(result, metericType, valsType) {
-    // if (this.config.rendererName == undefined)
-    //   this.config.rendererName = "table";
-
     $(".output").pivotUI(result, {
       // cols: $scope.table.config.cols,
       // rows: $scope.table.config.rows,
@@ -89,7 +86,16 @@ export class VisController {
       ),
       //rendererName: "Bar Chart",
       onRefresh: function(config) {
-        this.config = config;
+        var config_copy = JSON.parse(JSON.stringify(config));
+        //delete some values which are functions
+        delete config_copy["aggregators"];
+        delete config_copy["renderers"];
+        delete config_copy["derivedAttributes"];
+        //delete some bulky default values
+        delete config_copy["rendererOptions"];
+        delete config_copy["localeStrings"];
+
+        var test = config_copy;
       }
     });
   }
