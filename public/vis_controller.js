@@ -79,7 +79,9 @@ export class VisController {
         cols: globals.cols,
         rows: globals.rows,
         vals: valsType,
-        aggregatorName: metericType,
+        aggregator: $.pivotUtilities.aggregators[globals.rendererName](
+          valsType
+        ),
         renderer: globals.rendererName,
         onRefresh: function(config) {
           globals.rendererName = config.rendererName;
@@ -97,10 +99,7 @@ export class VisController {
       {
         cols: globals.cols,
         rows: globals.rows,
-        rendererName:
-          globals.rendererName == undefined
-            ? (globals.rendererName = "Table")
-            : globals.rendererName,
+        rendererName: globals.rendererName,
         vals: valsType,
         aggregatorName: metericType,
         renderers: $.extend(
