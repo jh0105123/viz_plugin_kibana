@@ -10,7 +10,7 @@ export const globals = {
   isContentLoading: false,
   isDeployNeeded: true,
   config: JSON.stringify(""),
-  metericType = String(null)
+  metericType: String(null)
 };
 
 window.$ = window.jQuery = jQuery;
