@@ -84,7 +84,7 @@ export class VisController {
   async renderPivotUITable(result, metericType, valsType) {
     $(".output").pivotUI(result, {
       onRefresh: function(config) {
-        delete config_copy["aggregatorName"];
+        delete config["aggregatorName"];
         //config["aggregatorName"] = globals.metericType;
       },
       // cols: $scope.table.config.cols,
