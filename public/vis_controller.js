@@ -7,10 +7,7 @@ import "pivottable/dist/pivottable.css";
 import "pivottable/dist/plotly_renderers.js";
 import "globals";
 export const globals = {
-  isContentLoading: false,
-  isDeployNeeded: true,
-  config: JSON.stringify(""),
-  metericType: String(null)
+  rendererName: String(null)
 };
 
 window.$ = window.jQuery = jQuery;
@@ -51,7 +48,6 @@ export class VisController {
           ? (metericType = "Sample Standard Deviation")
           : metericType;
 
-        globals.metericType = metericType;
         valsType.push(column["name"]);
       }
     });
@@ -87,6 +83,7 @@ export class VisController {
       {
         // cols: $scope.table.config.cols,
         // rows: $scope.table.config.rows,
+        rendererName: globals.rendererName,
         vals: valsType,
         aggregatorName: metericType,
         renderers: $.extend(
@@ -94,7 +91,7 @@ export class VisController {
           $.pivotUtilities.plotly_renderers
         ),
         onRefresh: function(config) {
-          var test = config;
+          globals.rendererName = config.rendererName;
         }
       },
       true
