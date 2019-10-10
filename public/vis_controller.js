@@ -21,6 +21,7 @@ export class VisController {
     this.pivottableVis = document.createElement("div");
     this.pivottableVis.className = "output";
     this.container.appendChild(this.pivottableVis);
+    this.test = JSON.stringify("");
   }
 
   async render(visData, status) {
@@ -75,6 +76,8 @@ export class VisController {
   }
 
   async renderPivotUITable(result, metericType, valsType) {
+    alert(this.test);
+
     $(".output").pivotUI(result, {
       // cols: $scope.table.config.cols,
       // rows: $scope.table.config.rows,
@@ -95,7 +98,7 @@ export class VisController {
         delete config_copy["rendererOptions"];
         delete config_copy["localeStrings"];
 
-        var test = config_copy;
+        this.test = config_copy;
       }
     });
   }
