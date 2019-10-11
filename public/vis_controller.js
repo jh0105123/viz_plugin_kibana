@@ -5,6 +5,7 @@ import "pivottable";
 
 import "pivottable/dist/pivottable.css";
 import "pivottable/dist/plotly_renderers.js";
+import "./vis.less";
 import "globals";
 export const globals = {
   rendererName: "table",
