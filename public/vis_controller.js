@@ -83,7 +83,7 @@ export class VisController {
         ),
         rendererName: globals.rendererName,
         renderer: $.pivotUtilities.renderers[globals.rendererName],
-        onRefresh: function(config) {
+        onRefresh: function onRefresh(config) {
           if (config == undefined) return;
 
           globals.rendererName = config.rendererName;
