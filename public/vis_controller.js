@@ -130,7 +130,6 @@ export class VisController {
     );
   }
   destroy() {
-    this.configChange();
     this.el.innerHTML = "";
   }
 }
