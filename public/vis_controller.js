@@ -109,9 +109,14 @@ export class VisController {
           $.pivotUtilities.plotly_renderers
         ),
         onRefresh: function(config) {
+          if (config == undefined) return;
+
           globals.rendererName = config.rendererName;
           globals.rows = config.rows;
           globals.cols = config.cols;
+
+          this.vis.params.push(globals.rows);
+          this.vis.params.push(globals.cols);
         }
       },
       true
