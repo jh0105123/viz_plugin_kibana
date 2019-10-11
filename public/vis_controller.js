@@ -125,6 +125,8 @@ export class VisController {
       },
       true
     );
+
+    this.configChange();
   }
   async configChange() {
     this.vis.params.rows = globals.rows;
@@ -132,7 +134,6 @@ export class VisController {
   }
 
   destroy() {
-    this.configChange();
     this.el.innerHTML = "";
   }
 }
