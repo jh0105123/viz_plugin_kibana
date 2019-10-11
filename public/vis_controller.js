@@ -82,11 +82,6 @@ export class VisController {
         ),
         rendererName: globals.rendererName,
         renderer: $.pivotUtilities.renderers[globals.rendererName]
-        // onRefresh: function(config) {
-        //   globals.rendererName = config.rendererName;
-        //   globals.rows = config.rows;
-        //   globals.cols = config.cols;
-        // }
       },
       true
     );
