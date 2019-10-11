@@ -121,6 +121,7 @@ export class VisController {
       },
       true
     );
+    if (config == undefined) return;
     this.vis.params.push(config);
   }
 
