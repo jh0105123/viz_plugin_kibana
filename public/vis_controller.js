@@ -13,10 +13,6 @@ export const globals = {
   rows: []
 };
 
-globals.observe(globals, function(changes) {
-  console.log(changes);
-});
-
 window.$ = window.jQuery = jQuery;
 export class VisController {
   constructor(el, vis) {
@@ -70,6 +66,11 @@ export class VisController {
     if (this.vis.params.editMode)
       this.renderPivotUITable(result, metericType, valsType);
     else this.renderPivotTable(result, metericType, valsType);
+
+
+    globals.observe(globals, function(changes) {
+      console.log(changes);
+    });
 
     return new Promise(resolve => {
       resolve("when done rendering");
