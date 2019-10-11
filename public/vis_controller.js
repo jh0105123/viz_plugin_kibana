@@ -116,7 +116,7 @@ export class VisController {
           globals.rows = config.rows;
           globals.cols = config.cols;
 
-          globals.config.push({ rows: config.rows, cols: config.cols });
+          globals.config = { rows: config.rows, cols: config.cols };
         }
       },
       true
