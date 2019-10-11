@@ -67,11 +67,6 @@ export class VisController {
       this.renderPivotUITable(result, metericType, valsType);
     else this.renderPivotTable(result, metericType, valsType);
 
-
-    globals.observe(globals, function(changes) {
-      console.log(changes);
-    });
-
     return new Promise(resolve => {
       resolve("when done rendering");
     });
@@ -123,12 +118,18 @@ export class VisController {
           globals.rendererName = config.rendererName;
           globals.rows = config.rows;
           globals.cols = config.cols;
+          configChange;
         }
       },
       true
     );
     //this.vis.params.rows = globals.rows;
     //this.vis.params.cols = globals.cols;
+  }
+
+  configChange() {
+    this.vis.params.rows = globals.rows;
+    this.vis.params.cols = globals.cols;
   }
 
   destroy() {
