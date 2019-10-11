@@ -13,7 +13,7 @@ export const globals = {
   rows: []
 };
 
-Object.observe(globals, function(changes) {
+globals.observe(globals, function(changes) {
   console.log(changes);
 });
 
