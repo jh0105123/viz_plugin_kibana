@@ -130,6 +130,7 @@ export class VisController {
     );
   }
   async configChange(config) {
+    if (config == undefined) return;
     globals.rendererName = config.rendererName;
     globals.rows = config.rows;
     globals.cols = config.cols;
