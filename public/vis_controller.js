@@ -10,11 +10,7 @@ import "globals";
 export const globals = {
   rendererName: "table",
   cols: [],
-  rows: [],
-  configChange() {
-    this.vis.params.rows = globals.rows;
-    this.vis.params.cols = globals.cols;
-  }
+  rows: []
 };
 
 window.$ = window.jQuery = jQuery;
@@ -125,15 +121,18 @@ export class VisController {
           globals.rendererName = config.rendererName;
           globals.rows = config.rows;
           globals.cols = config.cols;
-
-          globals.configChange();
         }
       },
       true
     );
   }
+  async configChange() {
+    this.vis.params.rows = globals.rows;
+    this.vis.params.cols = globals.cols;
+  }
 
   destroy() {
+    this.configChange();
     this.el.innerHTML = "";
   }
 }
