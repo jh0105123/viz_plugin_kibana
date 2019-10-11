@@ -28,23 +28,14 @@ const MyNewVisType = Private => {
           name: "metric",
           title: "Metric",
           min: 1,
-          aggFilter: [
-            "count",
-            "avg",
-            "sum",
-            "min",
-            "max",
-            "median",
-            "std_dev"
-            //"sum_of_squares",
-            //"variance"
-          ],
+          max: 1,
+          aggFilter: ["count", "avg", "sum", "min", "max", "median", "std_dev"],
           defaults: [{ type: "count", schema: "metric" }]
         },
         {
           group: "buckets",
           name: "segment",
-          icon: "fa fa-th",
+          //icon: "fa fa-th",
           title: "Bucket Split",
           min: 1,
           aggFilter: ["!geohash_grid", "!filter"]
