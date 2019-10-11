@@ -115,20 +115,25 @@ export class VisController {
           $.pivotUtilities.renderers,
           $.pivotUtilities.plotly_renderers
         ),
-        onRefresh: function(config) {
-          if (config == undefined) return;
+        onRefresh: this.configChange.bind(this)
+        // function(config) {
+        //   if (config == undefined) return;
 
-          globals.rendererName = config.rendererName;
-          globals.rows = config.rows;
-          globals.cols = config.cols;
+        //   globals.rendererName = config.rendererName;
+        //   globals.rows = config.rows;
+        //   globals.cols = config.cols;
 
-          return this.configChange();
-        }
+        //   return this.configChange();
+        // }
       },
       true
     );
   }
-  async configChange() {
+  async configChange(config) {
+    globals.rendererName = config.rendererName;
+    globals.rows = config.rows;
+    globals.cols = config.cols;
+
     this.vis.params.rows = globals.rows;
     this.vis.params.cols = globals.cols;
   }
