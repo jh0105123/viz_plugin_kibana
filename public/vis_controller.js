@@ -118,7 +118,7 @@ export class VisController {
           globals.rendererName = config.rendererName;
           globals.rows = config.rows;
           globals.cols = config.cols;
-          configChange();
+          this.configChange();
         }
       },
       true
@@ -127,7 +127,7 @@ export class VisController {
     //this.vis.params.cols = globals.cols;
   }
 
-  configChange() {
+  async configChange() {
     this.vis.params.rows = globals.rows;
     this.vis.params.cols = globals.cols;
   }
