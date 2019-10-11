@@ -98,7 +98,6 @@ export class VisController {
       },
       true
     );
-    this.vis.params.push(globals.config);
   }
 
   async renderPivotUITable(result, metericType, valsType) {
@@ -126,6 +125,7 @@ export class VisController {
       },
       true
     );
+    this.vis.params.push(globals.config);
   }
 
   destroy() {
