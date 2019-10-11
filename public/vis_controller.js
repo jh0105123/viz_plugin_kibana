@@ -69,6 +69,7 @@ export class VisController {
 
     return new Promise(resolve => {
       resolve("when done rendering");
+      this.configChange();
     });
   }
 
@@ -118,7 +119,6 @@ export class VisController {
           globals.rendererName = config.rendererName;
           globals.rows = config.rows;
           globals.cols = config.cols;
-          this.configChange();
         }
       },
       true
