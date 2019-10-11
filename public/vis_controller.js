@@ -13,6 +13,10 @@ export const globals = {
   rows: []
 };
 
+Object.observe(globals, function(changes) {
+  console.log(changes);
+});
+
 window.$ = window.jQuery = jQuery;
 export class VisController {
   constructor(el, vis) {
@@ -122,8 +126,8 @@ export class VisController {
       },
       true
     );
-    this.vis.params.rows = globals.rows;
-    this.vis.params.cols = globals.cols;
+    //this.vis.params.rows = globals.rows;
+    //this.vis.params.cols = globals.cols;
   }
 
   destroy() {
