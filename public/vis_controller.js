@@ -65,8 +65,14 @@ export class VisController {
     });
 
     if (this.vis.params.editMode)
-      return this.renderPivotUITable(result, metericType, valsType);
-    else return this.renderPivotTable(result, metericType, valsType);
+      this.renderPivotUITable(result, metericType, valsType);
+    else this.renderPivotTable(result, metericType, valsType);
+
+    this.vis.params.push(config);
+
+    return new Promise(resolve => {
+      resolve("when done rendering");
+    });
   }
 
   async renderPivotTable(result, metericType, valsType) {
@@ -121,8 +127,6 @@ export class VisController {
       },
       true
     );
-    if (config == undefined) return;
-    this.vis.params.push(config);
   }
 
   destroy() {
