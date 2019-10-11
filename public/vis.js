@@ -16,7 +16,9 @@ const MyNewVisType = Private => {
     visualization: VisController,
     visConfig: {
       defaults: {
-        editMode: true
+        editMode: true,
+        rows: [],
+        cols: []
       }
     },
     editorConfig: {
