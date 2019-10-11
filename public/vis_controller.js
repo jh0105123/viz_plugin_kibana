@@ -27,6 +27,9 @@ export class VisController {
     this.pivottableVis = document.createElement("div");
     this.pivottableVis.className = "output";
     this.container.appendChild(this.pivottableVis);
+
+    globals.rows = vis.params.rows;
+    globals.cols = vis.params.cols;
   }
 
   async render(visData, status) {
@@ -123,8 +126,6 @@ export class VisController {
       },
       true
     );
-    //this.vis.params.rows = globals.rows;
-    //this.vis.params.cols = globals.cols;
   }
 
   async configChange() {
