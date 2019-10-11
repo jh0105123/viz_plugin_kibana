@@ -2,7 +2,6 @@ import { VisFactoryProvider } from "ui/vis/vis_factory";
 import { VisTypesRegistryProvider } from "ui/registry/vis_types";
 import { Schemas } from "ui/vis/editors/default/schemas";
 
-import "./vis.less";
 import optionsTemplate from "./options_template.html";
 import { VisController } from "./vis_controller";
 
