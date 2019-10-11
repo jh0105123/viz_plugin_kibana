@@ -82,7 +82,14 @@ export class VisController {
           $.pivotUtilities.plotly_renderers
         ),
         rendererName: globals.rendererName,
-        renderer: $.pivotUtilities.renderers[globals.rendererName]
+        renderer: $.pivotUtilities.renderers[globals.rendererName],
+        onRefresh: function(config) {
+          if (config == undefined) return;
+
+          globals.rendererName = config.rendererName;
+          globals.rows = config.rows;
+          globals.cols = config.cols;
+        }
       },
       true
     );
