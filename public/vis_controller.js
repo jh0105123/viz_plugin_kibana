@@ -121,7 +121,8 @@ export class VisController {
           globals.rendererName = config.rendererName;
           globals.rows = config.rows;
           globals.cols = config.cols;
-          this.refreshData.bind(this);
+
+          return this.configChange();
         }
       },
       true
