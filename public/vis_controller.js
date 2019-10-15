@@ -102,9 +102,6 @@ export class VisController {
     );
   }
 
-  // this.vis.params.rows = globals.rows;
-  // this.vis.params.cols = globals.cols;
-
   async renderPivotUITable(result, metericType, valsType) {
     $(".output").pivotUI(
       result,
@@ -130,6 +127,9 @@ export class VisController {
     globals.rendererName = config.rendererName;
     globals.rows = config.rows;
     globals.cols = config.cols;
+
+    this.vis.params.rows = globals.rows;
+    this.vis.params.cols = globals.cols;
   }
 
   destroy() {
