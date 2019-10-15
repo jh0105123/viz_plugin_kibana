@@ -134,5 +134,7 @@ export class VisController {
 
   destroy() {
     this.el.innerHTML = "";
+    this.vis.params.rows = globals.rows;
+    this.vis.params.cols = globals.cols;
   }
 }
