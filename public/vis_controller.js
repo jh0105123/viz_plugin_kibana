@@ -28,6 +28,7 @@ export class VisController {
     this.pivottableVis.className = "output";
     this.container.appendChild(this.pivottableVis);
 
+    globals.rendererName = vis.params.rendererName;
     globals.rows = vis.params.rows;
     globals.cols = vis.params.cols;
   }
@@ -66,12 +67,15 @@ export class VisController {
       result.push(tempObj);
     });
 
+    this.vis.params.rendererName = globals.rendererName;
+    this.vis.params.rows = globals.rows;
+    this.vis.params.cols = globals.cols;
+
     if (this.vis.params.editMode)
       await this.renderPivotUITable(result, metericType, valsType);
     else await this.renderPivotTable(result, metericType, valsType);
 
     return new Promise(resolve => {
-      status.rendererName = globals.rendererName;
       resolve("when done rendering");
     });
   }
@@ -128,6 +132,10 @@ export class VisController {
     globals.rendererName = config.rendererName;
     globals.rows = config.rows;
     globals.cols = config.cols;
+
+    this.vis.params.rendererName = globals.rendererName;
+    this.vis.params.rows = globals.rows;
+    this.vis.params.cols = globals.cols;
   }
 
   destroy() {
