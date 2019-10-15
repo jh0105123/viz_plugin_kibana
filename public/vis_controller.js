@@ -128,7 +128,7 @@ export class VisController {
     globals.rows = config.rows;
     globals.cols = config.cols;
 
-    status.rows = globals.rows;
+    status.push(globals);
   }
 
   destroy() {
