@@ -70,9 +70,6 @@ export class VisController {
       this.renderPivotUITable(result, metericType, valsType);
     else this.renderPivotTable(result, metericType, valsType);
 
-    this.vis.params.rows = globals.rows;
-    this.vis.params.cols = globals.cols;
-
     return new Promise(resolve => {
       resolve("when done rendering");
     });
@@ -105,6 +102,9 @@ export class VisController {
     );
   }
 
+  // this.vis.params.rows = globals.rows;
+  // this.vis.params.cols = globals.cols;
+
   async renderPivotUITable(result, metericType, valsType) {
     $(".output").pivotUI(
       result,
@@ -118,17 +118,20 @@ export class VisController {
           $.pivotUtilities.renderers,
           $.pivotUtilities.plotly_renderers
         ),
-        onRefresh: function(config) {
-          if (config == undefined) return;
-
-          globals.rendererName = config.rendererName;
-          globals.rows = config.rows;
-          globals.cols = config.cols;
-        }
+        onRefresh: configChanged(config)
       },
       true
     );
   }
+
+  configChanged(config) {
+    if (config == undefined) return;
+
+    globals.rendererName = config.rendererName;
+    globals.rows = config.rows;
+    globals.cols = config.cols;
+  }
+
   destroy() {
     this.el.innerHTML = "";
   }
