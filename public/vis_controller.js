@@ -33,9 +33,6 @@ export class VisController {
   }
 
   async render(visData, status) {
-    this.vis.params.rows = globals.rows;
-    this.vis.params.cols = globals.cols;
-
     var columnsName = [];
     var result = [];
 
@@ -72,6 +69,9 @@ export class VisController {
     if (this.vis.params.editMode)
       this.renderPivotUITable(result, metericType, valsType);
     else this.renderPivotTable(result, metericType, valsType);
+
+    this.vis.params.rows = globals.rows;
+    this.vis.params.cols = globals.cols;
 
     return new Promise(resolve => {
       resolve("when done rendering");
