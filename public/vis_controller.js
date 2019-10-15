@@ -70,9 +70,6 @@ export class VisController {
       this.renderPivotUITable(result, metericType, valsType);
     else this.renderPivotTable(result, metericType, valsType);
 
-    status.rows = globals.rows;
-    status.cols = globals.cols;
-
     return new Promise(resolve => {
       resolve("when done rendering");
     });
@@ -130,6 +127,8 @@ export class VisController {
     globals.rendererName = config.rendererName;
     globals.rows = config.rows;
     globals.cols = config.cols;
+
+    status.rows = globals.rows;
   }
 
   destroy() {
