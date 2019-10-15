@@ -129,6 +129,8 @@ export class VisController {
   configChanged(config) {
     if (config == undefined) return;
 
+    if (config.rendererName == null) config.rendererName = "Table";
+
     globals.rendererName = config.rendererName;
     globals.rows = config.rows;
     globals.cols = config.cols;
