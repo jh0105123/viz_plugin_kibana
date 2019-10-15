@@ -135,11 +135,13 @@ export class VisController {
     globals.rows = config.rows;
     globals.cols = config.cols;
 
-    this.vis.params.rendererName = globals.rendererName;
-    this.vis.params.rows = globals.rows;
-    this.vis.params.cols = globals.cols;
     const stateCopy = this.vis.getState();
+
+    stateCopy.params.rendererName = globals.rendererName;
+    stateCopy.params.rows = globals.rows;
+    stateCopy.params.cols = globals.cols;
     this.vis.setState(stateCopy);
+    this.vis.updateState();
   }
 
   destroy() {
