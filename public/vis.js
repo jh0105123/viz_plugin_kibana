@@ -17,6 +17,7 @@ const MyNewVisType = Private => {
     visConfig: {
       defaults: {
         editMode: true,
+        rendererName: "table",
         rows: [],
         cols: []
       }
