@@ -70,8 +70,8 @@ export class VisController {
       this.renderPivotUITable(result, metericType, valsType);
     else this.renderPivotTable(result, metericType, valsType);
 
-    // this.vis.params.rows = visData.rows;
-    // this.vis.params.cols = visData.columns;
+    this.vis.params.rows = visData.rows;
+    this.vis.params.cols = visData.columns;
 
     return new Promise(resolve => {
       resolve("when done rendering");
