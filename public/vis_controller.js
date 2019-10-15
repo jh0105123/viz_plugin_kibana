@@ -71,7 +71,7 @@ export class VisController {
     else await this.renderPivotTable(result, metericType, valsType);
 
     return new Promise(resolve => {
-      vis.params.rendererName = globals.rendererName;
+      status.rendererName = globals.rendererName;
       resolve("when done rendering");
     });
   }
