@@ -67,10 +67,11 @@ export class VisController {
     });
 
     if (this.vis.params.editMode)
-      this.renderPivotUITable(result, metericType, valsType);
-    else this.renderPivotTable(result, metericType, valsType);
+      await this.renderPivotUITable(result, metericType, valsType);
+    else await this.renderPivotTable(result, metericType, valsType);
 
     return new Promise(resolve => {
+      vis.params.rendererName = globals.rendererName;
       resolve("when done rendering");
     });
   }
@@ -127,8 +128,6 @@ export class VisController {
     globals.rendererName = config.rendererName;
     globals.rows = config.rows;
     globals.cols = config.cols;
-
-    this.vis.params.rendererName = globals.rendererName;
   }
 
   destroy() {
