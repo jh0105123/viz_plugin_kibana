@@ -141,7 +141,7 @@ export class VisController {
     stateCopy.params.rows = globals.rows;
     stateCopy.params.cols = globals.cols;
     this.vis.setState(stateCopy);
-    this.vis.updateState();
+    //this.vis.updateState();
   }
 
   destroy() {
