@@ -8,7 +8,7 @@ import "pivottable/dist/plotly_renderers.js";
 import "./css/custom.css";
 import "globals";
 export const globals = {
-  rendererName: "table",
+  rendererName: "Table",
   cols: [],
   rows: []
 };
