@@ -67,13 +67,13 @@ export class VisController {
       result.push(tempObj);
     });
 
-    this.vis.params.rendererName = globals.rendererName;
-    this.vis.params.rows = globals.rows;
-    this.vis.params.cols = globals.cols;
-
     if (this.vis.params.editMode)
       await this.renderPivotUITable(result, metericType, valsType);
     else await this.renderPivotTable(result, metericType, valsType);
+
+    this.vis.params.rendererName = globals.rendererName;
+    this.vis.params.rows = globals.rows;
+    this.vis.params.cols = globals.cols;
 
     return new Promise(resolve => {
       resolve("when done rendering");
