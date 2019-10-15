@@ -33,6 +33,9 @@ export class VisController {
   }
 
   async render(visData, status) {
+    this.vis.params.rows = globals.rows;
+    this.vis.params.cols = globals.cols;
+
     var columnsName = [];
     var result = [];
 
@@ -134,7 +137,5 @@ export class VisController {
 
   destroy() {
     this.el.innerHTML = "";
-    this.vis.params.rows = globals.rows;
-    this.vis.params.cols = globals.cols;
   }
 }
