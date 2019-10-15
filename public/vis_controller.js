@@ -139,8 +139,8 @@ export class VisController {
 
     if (
       stateCopy.params.rendererName != globals.rendererName ||
-      stateCopy.params.rows != globals.rows ||
-      stateCopy.params.cols != globals.cols
+      JSON.stringify(stateCopy.params.rows) === JSON.stringify(globals.rows) ||
+      JSON.stringify(stateCopy.params.cols) === JSON.stringify(globals.cols)
     ) {
       stateCopy.params.rendererName = globals.rendererName;
       stateCopy.params.rows = globals.rows;
