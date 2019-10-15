@@ -128,13 +128,13 @@ export class VisController {
     globals.rows = config.rows;
     globals.cols = config.cols;
 
-    vis.params.rows = globals.rows;
-    vis.params.cols = globals.cols;
+    this.vis.params.rows = globals.rows;
+    this.vis.params.cols = globals.cols;
   }
 
   destroy() {
     this.el.innerHTML = "";
-    vis.params.rows = globals.rows;
-    vis.params.cols = globals.cols;
+    this.vis.params.rows = globals.rows;
+    this.vis.params.cols = globals.cols;
   }
 }
