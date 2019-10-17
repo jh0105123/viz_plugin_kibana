@@ -53,7 +53,8 @@ export class VisController {
       if (index == visData.columns.length - 1) {
         valsType.push(column["name"]);
       }
-      columnsName.push(column["name"]);
+      //columnsName.push(column["name"]);
+      var tempObj = {};
       tempObj[column["name"]] = column["id"];
       result.push(tempObj);
     });
