@@ -54,15 +54,17 @@ export class VisController {
         valsType.push(column["name"]);
       }
       columnsName.push(column["name"]);
-    });
-
-    visData.rows.forEach(row => {
-      var tempObj = {};
-      visData.columns.forEach((column, i) => {
-        tempObj[columnsName[i]] = row[column["id"]];
-      });
+      tempObj[column["name"]] = column["id"];
       result.push(tempObj);
     });
+
+    // visData.rows.forEach(row => {
+    //   var tempObj = {};
+    //   visData.columns.forEach((column, i) => {
+    //     tempObj[columnsName[i]] = row[column["id"]];
+    //   });
+    //   result.push(tempObj);
+    // });
 
     if (this.vis.params.editMode)
       await this.renderPivotUITable(result, metericType, valsType);
