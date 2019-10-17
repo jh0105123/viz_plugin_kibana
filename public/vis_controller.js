@@ -42,6 +42,7 @@ export class VisController {
 
     status.dimensions.metric.forEach(metric => {
       metericType = metric.aggType;
+      metericType == "count" ? (metericType = "Count") : metericType;
       metericType == "Max" ? (metericType = "Maximum") : metericType;
       metericType == "Min" ? (metericType = "Minimum") : metericType;
       metericType == "Standard Deviation"
@@ -111,7 +112,7 @@ export class VisController {
       {
         cols: globals.cols,
         rows: globals.rows,
-        //vals: valsType,
+        vals: valsType,
         aggregatorName: metericType,
         rendererName: globals.rendererName,
         renderers: $.extend(
