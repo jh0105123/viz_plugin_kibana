@@ -40,40 +40,40 @@ export class VisController {
     var metericType = String(null);
     var valsType = [];
 
-    visData.columns.forEach(column => {
-      columnsName.push(column["name"]);
+    // visData.columns.forEach(column => {
+    //   columnsName.push(column["name"]);
 
-      const aggConfig = column.aggConfig.__type;
-      if (aggConfig.type == "metrics") {
-        metericType = aggConfig.title;
+    //   const aggConfig = column.aggConfig.__type;
+    //   if (aggConfig.type == "metrics") {
+    //     metericType = aggConfig.title;
 
-        metericType == "Max" ? (metericType = "Maximum") : metericType;
+    //     metericType == "Max" ? (metericType = "Maximum") : metericType;
 
-        metericType == "Min" ? (metericType = "Minimum") : metericType;
+    //     metericType == "Min" ? (metericType = "Minimum") : metericType;
 
-        metericType == "Standard Deviation"
-          ? (metericType = "Sample Standard Deviation")
-          : metericType;
+    //     metericType == "Standard Deviation"
+    //       ? (metericType = "Sample Standard Deviation")
+    //       : metericType;
 
-        valsType.push(column["name"]);
-      }
-    });
+    //     valsType.push(column["name"]);
+    //   }
+    // });
 
-    visData.rows.forEach(row => {
-      var tempObj = {};
-      visData.columns.forEach((column, i) => {
-        tempObj[columnsName[i]] = row[column["id"]];
-      });
-      result.push(tempObj);
-    });
+    // visData.rows.forEach(row => {
+    //   var tempObj = {};
+    //   visData.columns.forEach((column, i) => {
+    //     tempObj[columnsName[i]] = row[column["id"]];
+    //   });
+    //   result.push(tempObj);
+    // });
 
-    if (this.vis.params.editMode)
-      await this.renderPivotUITable(result, metericType, valsType);
-    else await this.renderPivotTable(result, metericType, valsType);
+    // if (this.vis.params.editMode)
+    //   await this.renderPivotUITable(result, metericType, valsType);
+    // else await this.renderPivotTable(result, metericType, valsType);
 
-    this.vis.params.rendererName = globals.rendererName;
-    this.vis.params.rows = globals.rows;
-    this.vis.params.cols = globals.cols;
+    // this.vis.params.rendererName = globals.rendererName;
+    // this.vis.params.rows = globals.rows;
+    // this.vis.params.cols = globals.cols;
 
     return new Promise(resolve => {
       resolve("when done rendering");
