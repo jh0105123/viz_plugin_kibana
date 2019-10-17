@@ -12,13 +12,13 @@ export const globals = {
   cols: [],
   rows: [],
   metericTypes: new Map([
-    ["count", "Count"],
-    ["avg", "Average"],
-    ["sum", "Sum"],
-    ["min", "Minimum"],
-    ["max", "Maximum"],
-    ["median", "Median"],
-    ["std_dev", "Sample Standard Deviation"]
+    ["Count", "Count"],
+    ["Average", "Average"],
+    ["Sum", "Sum"],
+    ["Min", "Minimum"],
+    ["Max", "Maximum"],
+    ["Median", "Median"],
+    ["Standard Deviation", "Sample Standard Deviation"]
   ])
 };
 
@@ -49,13 +49,14 @@ export class VisController {
     var metericType = String(null);
     var valsType = [];
 
-    status.dimensions.metric.forEach(metric => {
-      metericType = globals.metericTypes.get(metric.aggType);
-    });
+    // status.dimensions.metric.forEach(metric => {
+    //   metericType = globals.metericTypes.get(metric.aggType);
+    // });
 
     visData.columns.forEach((column, index) => {
       if (index == visData.columns.length - 1) {
         valsType.push(column["name"]);
+        metericType = globals.metericTypes.get(column["name"].split(" ")[0]);
       }
       columnsName.push(column["name"]);
     });
