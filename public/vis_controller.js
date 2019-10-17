@@ -1,4 +1,3 @@
-// node_module import
 import jQuery from "jquery";
 import "jqueryui";
 import "pivottable";
@@ -53,9 +52,8 @@ export class VisController {
     visData.columns.forEach((column, index) => {
       if (index == visData.columns.length - 1) {
         valsType.push(column["name"]);
-      } else {
-        columnsName.push(column["name"]);
       }
+      columnsName.push(column["name"]);
     });
 
     visData.rows.forEach(row => {
