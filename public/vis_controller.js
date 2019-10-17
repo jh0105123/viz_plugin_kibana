@@ -66,7 +66,7 @@ export class VisController {
     });
 
     if (this.vis.params.editMode)
-      await this.renderPivotUITable(result, metericType, valsType);
+      await this.renderPivotTable(result, metericType, valsType);
     else await this.renderPivotTable(result, metericType, valsType);
 
     this.vis.params.rendererName = globals.rendererName;
