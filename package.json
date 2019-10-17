@@ -1,9 +1,6 @@
 {
   "name": "pivot_table",
-  "kibana": {
-    "version": "7.1.1",
-    "templateVersion": "1.0.0"
-  },
+  "version": "kibana",
   "dependencies": {
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
