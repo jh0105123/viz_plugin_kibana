@@ -6,10 +6,20 @@ import "pivottable/dist/pivottable.css";
 import "pivottable/dist/plotly_renderers.js";
 import "./css/custom.css";
 import "globals";
+
 export const globals = {
   rendererName: "Table",
   cols: [],
-  rows: []
+  rows: [],
+  metericTypes: new Map([
+    ["count", "Count"],
+    ["avg", "Average"],
+    ["sum", "Sum"],
+    ["min", "Minimum"],
+    ["max", "Maximum"],
+    ["median", "Median"],
+    ["std_dev", "Sample Standard Deviation"]
+  ])
 };
 
 window.$ = window.jQuery = jQuery;
@@ -40,13 +50,7 @@ export class VisController {
     var valsType = [];
 
     status.dimensions.metric.forEach(metric => {
-      metericType = metric.aggType;
-      metericType == "count" ? (metericType = "Count") : metericType;
-      metericType == "Max" ? (metericType = "Maximum") : metericType;
-      metericType == "Min" ? (metericType = "Minimum") : metericType;
-      metericType == "Standard Deviation"
-        ? (metericType = "Sample Standard Deviation")
-        : metericType;
+      metericType = globals.metericTypes.get(metric.aggType);
     });
 
     visData.columns.forEach((column, index) => {
@@ -92,13 +96,7 @@ export class VisController {
         ),
         rendererName: globals.rendererName,
         renderer: $.pivotUtilities.renderers[globals.rendererName],
-        onRefresh: function onRefresh(config) {
-          if (config == undefined) return;
-
-          globals.rendererName = config.rendererName;
-          globals.rows = config.rows;
-          globals.cols = config.cols;
-        }
+        onRefresh: await this.configChanged.bind(this)
       },
       true
     );
