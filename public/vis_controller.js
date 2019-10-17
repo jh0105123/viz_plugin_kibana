@@ -66,7 +66,7 @@ export class VisController {
     });
 
     if (this.vis.params.editMode)
-      await this.renderPivotTable(result, metericType, valsType);
+      await this.renderPivotUITable(result, metericType, valsType);
     else await this.renderPivotTable(result, metericType, valsType);
 
     this.vis.params.rendererName = globals.rendererName;
@@ -111,7 +111,7 @@ export class VisController {
       {
         cols: globals.cols,
         rows: globals.rows,
-        vals: valsType,
+        //vals: valsType,
         aggregatorName: metericType,
         rendererName: globals.rendererName,
         renderers: $.extend(
