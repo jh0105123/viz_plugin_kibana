@@ -137,6 +137,7 @@ export class VisController {
       stateCopy.params.rows = config.rows;
       stateCopy.params.cols = config.cols;
       this.vis.setState(stateCopy);
+      this.vis.updateState();
     }
   }
 
