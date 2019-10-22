@@ -4,10 +4,19 @@ import "pivottable";
 
 import "pivottable/dist/pivottable.css";
 import "pivottable/dist/plotly_renderers.js";
-import "uuid/v1";
 import "./css/custom.css";
 
 window.$ = window.jQuery = jQuery;
+
+function getUUID() {
+  // UUID v4 generator in JavaScript (RFC4122 compliant)
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
+    var r = (Math.random() * 16) | 0,
+      v = c == "x" ? r : (r & 3) | 8;
+    return v.toString(16);
+  });
+}
+
 export class VisController {
   constructor(el, vis) {
     this.vis = vis;
@@ -18,7 +27,7 @@ export class VisController {
     this.container.style.cssText = "overflow: auto; width:100%;";
     this.el.appendChild(this.container);
 
-    this.uuid = uuidv1();
+    this.uuid = getUUID();
     this.pivottableVis = document.createElement("div");
     this.pivottableVis.className = "output" + this.uuid;
     this.container.appendChild(this.pivottableVis);
