@@ -38,9 +38,9 @@ export class VisController {
       ])
     };
 
-    configs.rendererName = vis.params.rendererName;
-    configs.rows = vis.params.rows;
-    configs.cols = vis.params.cols;
+    // configs.rendererName = vis.params.rendererName;
+    // configs.rows = vis.params.rows;
+    // configs.cols = vis.params.cols;
 
     var columnsName = [];
     var result = [];
