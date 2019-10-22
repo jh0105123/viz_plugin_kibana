@@ -6,6 +6,7 @@
     "jquery": "^3.4.1",
     "jqueryui": "^1.11.1",
     "pivottable": "^2.23.0",
-    "plotly.js-dist": "^1.50.0"
+    "plotly.js-dist": "^1.50.0",
+    "uuid": "^3.3.3"
   }
 }
