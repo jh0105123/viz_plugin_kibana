@@ -25,7 +25,6 @@ export class VisController {
     this.pivottableVis.className = "output" + globals.instance;
     this.container.appendChild(this.pivottableVis);
     this.instance = globals.instance;
-    globals.instance++;
   }
 
   async render(visData, status) {
@@ -142,6 +141,7 @@ export class VisController {
   }
 
   destroy() {
+    globals.instance++;
     this.vis.updateState();
     this.el.innerHTML = "";
   }
