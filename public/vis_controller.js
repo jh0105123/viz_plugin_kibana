@@ -128,19 +128,18 @@ export class VisController {
     // configs.rows = config.rows;
     // configs.cols = config.cols;
     // const stateCopy = this.vis.getState();
-    // if (
-    //   stateCopy.params.rendererName != configs.rendererName ||
-    //   JSON.stringify(stateCopy.params.rows) != JSON.stringify(configs.rows) ||
-    //   JSON.stringify(stateCopy.params.cols) != JSON.stringify(configs.cols)
-    // ) {
-    //   stateCopy.params.rendererName = configs.rendererName;
-    //   stateCopy.params.rows = configs.rows;
-    //   stateCopy.params.cols = configs.cols;
-    //   this.vis.setState(stateCopy);
-    // }
+    if (
+      stateCopy.params.rendererName != configs.rendererName ||
+      JSON.stringify(stateCopy.params.rows) != JSON.stringify(configs.rows) ||
+      JSON.stringify(stateCopy.params.cols) != JSON.stringify(configs.cols)
+    ) {
+      stateCopy.params.rendererName = configs.rendererName;
+      stateCopy.params.rows = configs.rows;
+      stateCopy.params.cols = configs.cols;
+      this.vis.setState(stateCopy);
+    }
     const stateCopy = this.vis.getState();
     this.vis.setState(stateCopy);
-    this.vis.updateState();
   }
 
   destroy() {
