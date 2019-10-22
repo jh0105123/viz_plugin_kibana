@@ -129,13 +129,13 @@ export class VisController {
     // configs.cols = config.cols;
     const stateCopy = this.vis.getState();
     if (
-      stateCopy.params.rendererName != configs.rendererName ||
-      JSON.stringify(stateCopy.params.rows) != JSON.stringify(configs.rows) ||
-      JSON.stringify(stateCopy.params.cols) != JSON.stringify(configs.cols)
+      stateCopy.params.rendererName != config.rendererName ||
+      JSON.stringify(stateCopy.params.rows) != JSON.stringify(config.rows) ||
+      JSON.stringify(stateCopy.params.cols) != JSON.stringify(config.cols)
     ) {
-      // stateCopy.params.rendererName = configs.rendererName;
-      // stateCopy.params.rows = configs.rows;
-      // stateCopy.params.cols = configs.cols;
+      stateCopy.params.rendererName = config.rendererName;
+      stateCopy.params.rows = config.rows;
+      stateCopy.params.cols = config.cols;
       this.vis.setState(stateCopy);
     }
   }
