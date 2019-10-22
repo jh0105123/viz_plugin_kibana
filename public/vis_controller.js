@@ -22,21 +22,11 @@ let globals = {
   ])
 };
 window.$ = window.jQuery = jQuery;
-const app = uiModules.get("apps/pivot_table");
-app.config($locationProvider => {
-  $locationProvider.html5Mode({
-    enabled: false,
-    requireBase: false,
-    rewriteLinks: false
-  });
-});
-app.config(stateManagementConfigProvider =>
-  stateManagementConfigProvider.disable()
-);
-function VisController($scope, $element, $http) {
+const module = uiModules.get("apps/pivot_table");
+
+module.controller("VisController", function($scope, $timeout) {
   alert($scope);
-}
-chrome.setRootController("pivot_table", VisController);
+});
 // export class VisController {
 //   constructor(el, vis) {
 //     this.vis = vis;
