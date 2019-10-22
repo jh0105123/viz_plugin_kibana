@@ -122,11 +122,6 @@ export class VisController {
   }
 
   configChanged(config) {
-    // if (config == undefined) return;
-    // if (config.rendererName == null) config.rendererName = "Table";
-    // configs.rendererName = config.rendererName;
-    // configs.rows = config.rows;
-    // configs.cols = config.cols;
     const stateCopy = this.vis.getState();
     if (
       stateCopy.params.rendererName != config.rendererName ||
@@ -137,7 +132,6 @@ export class VisController {
       stateCopy.params.rows = config.rows;
       stateCopy.params.cols = config.cols;
       this.vis.setState(stateCopy);
-      this.vis.updateState();
     }
   }
 
