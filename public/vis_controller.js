@@ -88,7 +88,7 @@ export class VisController {
   }
 
   async renderPivotTable(result, metericType, valsType, configs) {
-    $(".output" + instance).pivot(
+    $(".output" + globals.instance).pivot(
       result,
       {
         cols: configs.cols,
@@ -109,7 +109,7 @@ export class VisController {
   }
 
   async renderPivotUITable(result, metericType, valsType, configs) {
-    $(".output" + instance).pivotUI(
+    $(".output" + globals.instance).pivotUI(
       result,
       {
         cols: configs.cols,
