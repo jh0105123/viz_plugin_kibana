@@ -6,6 +6,7 @@ import "pivottable/dist/pivottable.css";
 import "pivottable/dist/plotly_renderers.js";
 import "./css/custom.css";
 import { uiModules } from "ui/modules";
+import chrome from "ui/chrome";
 let globals = {
   rendererName: "Table",
   cols: [],
@@ -21,11 +22,21 @@ let globals = {
   ])
 };
 window.$ = window.jQuery = jQuery;
-uiModules
-  .get("app/pivot_table", [])
-  .controller("VisController", function($scope, $timeout, Private) {
-    alert($scope.title);
+const app = uiModules.get("apps/pivot_table");
+app.config($locationProvider => {
+  $locationProvider.html5Mode({
+    enabled: false,
+    requireBase: false,
+    rewriteLinks: false
   });
+});
+app.config(stateManagementConfigProvider =>
+  stateManagementConfigProvider.disable()
+);
+function VisController($scope, $element, $http) {
+  alert($scope);
+}
+chrome.setRootController("pivot_table", VisController);
 // export class VisController {
 //   constructor(el, vis) {
 //     this.vis = vis;
