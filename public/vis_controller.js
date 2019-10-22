@@ -140,6 +140,7 @@ export class VisController {
     // }
     const stateCopy = this.vis.getState();
     this.vis.setState(stateCopy);
+    this.vis.updateState();
   }
 
   destroy() {
