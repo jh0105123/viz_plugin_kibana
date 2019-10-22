@@ -5,8 +5,10 @@ import "pivottable";
 import "pivottable/dist/pivottable.css";
 import "pivottable/dist/plotly_renderers.js";
 import "./css/custom.css";
-import "instance";
-export var instance = 0;
+import "globals";
+export var globals = {
+  instance: 0
+};
 
 window.$ = window.jQuery = jQuery;
 export class VisController {
@@ -23,7 +25,7 @@ export class VisController {
     this.pivottableVis.className = "output" + instance;
     this.container.appendChild(this.pivottableVis);
     this.instance = instance;
-    instance++;
+    globals.instance++;
   }
 
   async render(visData, status) {
