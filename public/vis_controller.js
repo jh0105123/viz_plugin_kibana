@@ -5,26 +5,41 @@ import "pivottable";
 import "pivottable/dist/pivottable.css";
 import "pivottable/dist/plotly_renderers.js";
 import "./css/custom.css";
-import "globals";
+// import "globals";
 
-export const globals = {
-  rendererName: "Table",
-  cols: [],
-  rows: [],
-  metericTypes: new Map([
-    ["Count", "Count"],
-    ["Average", "Average"],
-    ["Sum", "Sum"],
-    ["Min", "Minimum"],
-    ["Max", "Maximum"],
-    ["Median", "Median"],
-    ["Standard Deviation", "Sample Standard Deviation"]
-  ])
-};
+// export const globals = {
+//   rendererName: "Table",
+//   cols: [],
+//   rows: [],
+//   metericTypes: new Map([
+//     ["Count", "Count"],
+//     ["Average", "Average"],
+//     ["Sum", "Sum"],
+//     ["Min", "Minimum"],
+//     ["Max", "Maximum"],
+//     ["Median", "Median"],
+//     ["Standard Deviation", "Sample Standard Deviation"]
+//   ])
+// };
 
 window.$ = window.jQuery = jQuery;
 export class VisController {
   constructor(el, vis) {
+    const globals = {
+      rendererName: "Table",
+      cols: [],
+      rows: [],
+      metericTypes: new Map([
+        ["Count", "Count"],
+        ["Average", "Average"],
+        ["Sum", "Sum"],
+        ["Min", "Minimum"],
+        ["Max", "Maximum"],
+        ["Median", "Median"],
+        ["Standard Deviation", "Sample Standard Deviation"]
+      ])
+    };
+
     this.vis = vis;
     this.el = el;
 
