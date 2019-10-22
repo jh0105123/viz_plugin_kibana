@@ -5,6 +5,8 @@ import "pivottable";
 import "pivottable/dist/pivottable.css";
 import "pivottable/dist/plotly_renderers.js";
 import "./css/custom.css";
+import "globals";
+export var instance = 0;
 
 window.$ = window.jQuery = jQuery;
 export class VisController {
@@ -18,8 +20,10 @@ export class VisController {
     this.el.appendChild(this.container);
 
     this.pivottableVis = document.createElement("div");
-    this.pivottableVis.className = "output";
+    this.pivottableVis.className = "output" + instance;
     this.container.appendChild(this.pivottableVis);
+    this.instance = instance;
+    globals.instance++;
   }
 
   async render(visData, status) {
@@ -82,7 +86,7 @@ export class VisController {
   }
 
   async renderPivotTable(result, metericType, valsType, configs) {
-    $(".output").pivot(
+    $(".output" + instance).pivot(
       result,
       {
         cols: configs.cols,
@@ -103,7 +107,7 @@ export class VisController {
   }
 
   async renderPivotUITable(result, metericType, valsType, configs) {
-    $(".output").pivotUI(
+    $(".output" + instance).pivotUI(
       result,
       {
         cols: configs.cols,
