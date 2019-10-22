@@ -21,11 +21,8 @@ let globals = {
   ])
 };
 window.$ = window.jQuery = jQuery;
-uiModules
-  .get("app/pivot_table", [])
-  .controller("VisController", function($scope, $timeout, Private) {
-    alert($scope.title);
-  });
+function VisController($scope, $element, $http) {}
+chrome.setRootController("elasticHq", VisController);
 // export class VisController {
 //   constructor(el, vis) {
 //     this.vis = vis;
