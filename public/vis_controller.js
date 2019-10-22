@@ -29,7 +29,7 @@ export class VisController {
 
     this.uuid = getUUID();
     this.pivottableVis = document.createElement("div");
-    this.pivottableVis.className = "output" + this.uuid;
+    this.pivottableVis.className = "output_" + this.uuid;
     this.container.appendChild(this.pivottableVis);
   }
 
@@ -93,7 +93,7 @@ export class VisController {
   }
 
   async renderPivotTable(result, metericType, valsType, configs) {
-    $(".output" + this.uuid).pivot(
+    $(".output_" + this.uuid).pivot(
       result,
       {
         cols: configs.cols,
@@ -114,7 +114,7 @@ export class VisController {
   }
 
   async renderPivotUITable(result, metericType, valsType, configs) {
-    $(".output" + this.uuid).pivotUI(
+    $(".output_" + this.uuid).pivotUI(
       result,
       {
         cols: configs.cols,
@@ -147,7 +147,6 @@ export class VisController {
   }
 
   destroy() {
-    globals.instance++;
     this.vis.updateState();
     this.el.innerHTML = "";
   }
